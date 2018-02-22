@@ -16,6 +16,14 @@
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      ".eslintrc.js",
+      "dummydata.v2.js",
+      "webpack.config.js",
+      "bundle.js",
+      "/coverage/"
     ]
   },
   "repository": {
@@ -41,6 +49,7 @@
     "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.0",
     "nodemon": "^1.15.1",
+    "supertest": "^3.0.0",
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^2.0.5"
   },
