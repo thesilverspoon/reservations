@@ -1,3 +1,3 @@
 module.exports = {
-    "extends": "airbnb"
+    "extends": "eslint-config-airbnb"
 };
