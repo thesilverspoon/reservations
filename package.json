@@ -4,9 +4,17 @@
   "description": "SilverSpoon reservations component",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/jest",
+    "test:watch": "./node_modules/.bin/jest -w",
+    "test:coverage": "./node_modules/.bin/jest --coverage",
     "build": "./node_modules/.bin/webpack",
     "build:watch": "./node_modules/.bin/webpack -w"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ]
   },
   "repository": {
     "type": "git",
@@ -28,6 +36,7 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.0",
     "webpack": "^3.11.0",
     "webpack-dev-middleware": "^2.0.5"
   },
