@@ -9,10 +9,11 @@ const infoList = dummyData.map(rest => ({
   seats: 20 + (Math.floor(50 * Math.random())),
 }));
 
-const generateReservations = () => {
+const generateReservations = (date) => {
   const reservationList = [];
 
-  const dateStr = (new Date()).toISOString().slice(0, 10);
+  const dateObj = date || new Date();
+  const dateStr = dateObj.toISOString().slice(0, 10);
 
   dummyData.forEach((rest) => {
     const maxSeats = infoList.find(item => item.id === rest.id).seats;
@@ -41,11 +42,5 @@ const generateReservations = () => {
 
   return reservationList;
 };
-
-
-
-// console.log(aggregateRes[infoList[0].id]);
-// console.log(infoList[0]);
-
 
 module.exports = { infoList, generateReservations };
