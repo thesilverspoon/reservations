@@ -1,4 +1,4 @@
-[
+module.exports = [
   { "id": 90976, "name": "Beard Papa's" },
   { "id": 90826, "name": 'Tpumps' },
   { "id": 89104, "name": 'Tokyo Katana-Ya' },
@@ -118,4 +118,4 @@
   { "id": 884, "name": 'House of Nanking' },
   { "id": 423, "name": 'Orale Orale' },
   { "id": 305, "name": 'Pacific Catch' },
-]
+];
