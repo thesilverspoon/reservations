@@ -27,7 +27,7 @@ router.get('/:id/reservations/:date', (req, res) => {
     },
     ],
   };
-  res.status(200).send(response);
+  res.send(response);
 });
 
 router.get('/:id/reservations', (req, res) => {
@@ -55,7 +55,7 @@ router.get('/:id/reservations', (req, res) => {
     },
     ],
   };
-  res.status(200).send(response);
+  res.send(response);
 });
 
 module.exports = router;

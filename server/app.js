@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 
-const restaurantRouter = require('./routers/restaurant');
+const restaurantsRouter = require('./routers/restaurants');
 
 const app = express();
 
@@ -10,6 +10,6 @@ const app = express();
 app.use(morgan('dev'));
 
 app.use('/', express.static(path.join(__dirname, '../client/dist')));
-app.use('/restaurant', restaurantRouter);
+app.use('/restaurants', restaurantsRouter);
 
 module.exports = app;
