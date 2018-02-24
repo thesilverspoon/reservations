@@ -5,7 +5,7 @@
   "main": "./server/server.js",
   "scripts": {
     "test": "./node_modules/.bin/jest",
-    "test:watch": "./node_modules/.bin/jest -w",
+    "test:watch": "./node_modules/.bin/jest --watch",
     "test:coverage": "./node_modules/.bin/jest --coverage",
     "build": "./node_modules/.bin/webpack",
     "build:watch": "./node_modules/.bin/webpack -w",
