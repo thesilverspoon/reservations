@@ -23,8 +23,8 @@ describe('fakeData', () => {
       expect(fakeData.infoList.length).toBe(sampleData.length);
 
       const fakeDataIds = fakeData.infoList.map(item => item.id);
-      const dummyDataIds = sampleData.map(item => item.id);
-      dummyDataIds.forEach((id) => {
+      const sampleDataIds = sampleData.map(item => item.id);
+      sampleDataIds.forEach((id) => {
         expect(fakeDataIds.includes(id)).toBe(true);
       });
     });
