@@ -25,7 +25,7 @@ CREATE TABLE reservations (
 );
 
 
-/* insert some dummy data */
+/* insert some sample data */
 INSERT INTO restaurants (id, name, seats)
   VALUES (1, 'Krusty Burger', 10);
 

@@ -1,5 +1,5 @@
 const fakeData = require('./fakeData');
-const dummyData = require('./dummydata.v2');
+const sampleData = require('./sampleData');
 
 describe('fakeData', () => {
   describe('infoList', () => {
@@ -19,12 +19,12 @@ describe('fakeData', () => {
       expect(typeof fakeData.infoList[0].seats).toBe('number');
     });
 
-    test('should have an entry for every restaurant in dummydata', () => {
-      expect(fakeData.infoList.length).toBe(dummyData.length);
+    test('should have an entry for every restaurant in sampleData', () => {
+      expect(fakeData.infoList.length).toBe(sampleData.length);
 
       const fakeDataIds = fakeData.infoList.map(item => item.id);
-      const dummyDataIds = dummyData.map(item => item.id);
-      dummyDataIds.forEach((id) => {
+      const sampleDataIds = sampleData.map(item => item.id);
+      sampleDataIds.forEach((id) => {
         expect(fakeDataIds.includes(id)).toBe(true);
       });
     });
