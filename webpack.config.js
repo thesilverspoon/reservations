@@ -17,6 +17,9 @@ module.exports = {
     ]
   },
 
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
 
   output: {
     filename: './client/dist/bundle.js'
