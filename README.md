@@ -1,5 +1,7 @@
 # reservations-component
 
+[![CircleCI](https://circleci.com/gh/thesilverspoon/reservations-component.svg?style=svg)](https://circleci.com/gh/thesilverspoon/reservations-component)
+
 ## PostgreSQL Installation Instructions
 
 
