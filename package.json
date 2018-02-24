@@ -20,7 +20,7 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/",
       ".eslintrc.js",
-      "dummydata.v2.js",
+      "sampleData.js",
       "webpack.config.js",
       "bundle.js",
       "/coverage/"

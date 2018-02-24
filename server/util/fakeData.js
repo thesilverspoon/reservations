@@ -1,9 +1,9 @@
 const faker = require('faker');
 
-const dummyData = require('./dummydata.v2');
+const sampleData = require('./sampleData');
 
 
-const infoList = dummyData.map(rest => ({
+const infoList = sampleData.map(rest => ({
   id: rest.id,
   name: rest.name,
   seats: 20 + (Math.floor(50 * Math.random())),
@@ -15,7 +15,7 @@ const generateReservations = (date) => {
   const dateObj = date || new Date();
   const dateStr = dateObj.toISOString().slice(0, 10);
 
-  dummyData.forEach((rest) => {
+  sampleData.forEach((rest) => {
     const maxSeats = infoList.find(item => item.id === rest.id).seats;
 
     // for 5pm to 9pm
