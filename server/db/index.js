@@ -23,12 +23,10 @@ const getOpenSeats = (restaurantId, date) => {
 
 const addReservation = ({
   restaurantId, date, time, name, party,
-}) => {
-  return client.query(
-    'INSERT INTO reservations (restaurantId, date, time, name, party) VALUES ($1,$2,$3,$4,$5)',
-    [restaurantId, date, time, name, party],
-  );
-};
+}) => client.query(
+  'INSERT INTO reservations (restaurantId, date, time, name, party) VALUES ($1,$2,$3,$4,$5)',
+  [restaurantId, date, time, name, party],
+);
 
 const addRestaurantInfo = ({
   id, name, seats,

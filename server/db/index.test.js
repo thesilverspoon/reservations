@@ -15,13 +15,13 @@ describe('db/index.js', () => {
     test('should run insert query of restaurant info into DB', () => {
       const testItem = { id: 5, name: 'Krusty Burger', seats: 100 };
       db.addRestaurantInfo(testItem)
-        .then(result => {
+        .then((result) => {
           expect(result.query).toBe('INSERT INTO restaurants (id,name,seats) VALUES ($1,$2,$3)');
           expect(result.params).toHaveLength(3);
           expect(result.params).toEqual(expect.arrayContaining([
             testItem.id, testItem.name, testItem.seats]));
         })
-        .catch(error => {
+        .catch((error) => {
           expect(error).toBe(false);
         });
     });
@@ -39,13 +39,13 @@ describe('db/index.js', () => {
       };
 
       db.addReservation(testItem)
-        .then(result => {
+        .then((result) => {
           expect(result.query).toBe('INSERT INTO reservations (restaurantId, date, time, name, party) VALUES ($1,$2,$3,$4,$5)');
           expect(result.params).toHaveLength(5);
           expect(result.params).toEqual(expect.arrayContaining([
             testItem.restaurantId, testItem.date, testItem.time, testItem.name, testItem.party]));
         })
-        .catch(error => {
+        .catch((error) => {
           expect(error).toBe(false);
         });
     });
