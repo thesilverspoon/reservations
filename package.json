@@ -5,7 +5,7 @@
   "main": "./server/server.js",
   "scripts": {
     "test": "./node_modules/.bin/jest",
-    "test:watch": "./node_modules/.bin/jest -w",
+    "test:watch": "./node_modules/.bin/jest --watch",
     "test:coverage": "./node_modules/.bin/jest --coverage",
     "build": "./node_modules/.bin/webpack",
     "build:watch": "./node_modules/.bin/webpack -w",
@@ -55,14 +55,15 @@
     "webpack-dev-middleware": "^2.0.5"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "dotenv": "^5.0.0",
     "express": "^4.16.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "faker": "^4.1.0",
     "morgan": "^1.9.0",
     "pg": "^7.4.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "faker": "^4.1.0"
+    "react-dom": "^16.2.0"
   }
 }
