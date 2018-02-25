@@ -5,6 +5,6 @@ import Reservation from './Reservation';
 
 describe('Reservation Component', () => {
   test('should render correctly', () => {
-    expect(shallow(<Reservation id={300} />)).toMatchSnapshot();
+    expect(shallow(<Reservation id={100} />)).toMatchSnapshot();
   });
 });
