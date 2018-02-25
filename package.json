@@ -57,12 +57,14 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "dotenv": "^5.0.0",
-    "express": "^4.16.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "express": "^4.16.2",
     "faker": "^4.1.0",
+    "jquery": "^3.3.1",
     "morgan": "^1.9.0",
     "pg": "^7.4.1",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }
