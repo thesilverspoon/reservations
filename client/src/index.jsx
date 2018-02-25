@@ -3,4 +3,4 @@ import ReactDOM from 'react-dom';
 
 import Reservation from './components/Reservation';
 
-ReactDOM.render(<Reservation />, document.getElementById('app'));
+ReactDOM.render(<Reservation id={100} />, document.getElementById('app'));
