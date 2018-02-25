@@ -11,8 +11,8 @@ CREATE TABLE restaurants (
 );
 
 CREATE TABLE reservations (
-  id              integer PRIMARY KEY,
-  restaurantId    integer,
+  id              SERIAL PRIMARY KEY,
+  restaurantId    integer NOT NULL,
   date            Date,
   time            smallint,
   name            varchar(140),
@@ -25,9 +25,9 @@ CREATE TABLE reservations (
 );
 
 
-/* insert some sample data */
-INSERT INTO restaurants (id, name, seats)
-  VALUES (1, 'Krusty Burger', 10);
+-- /* insert some sample data */
+-- INSERT INTO restaurants (id, name, seats)
+--   VALUES (1, 'Krusty Burger', 10);
 
-INSERT INTO reservations (id, restaurantId, date, time, name, party)
-  VALUES (1, 1, NOW(), 17, 'Homer Simpson', 5);
+-- INSERT INTO reservations (restaurantId, date, time, name, party)
+--   VALUES (1, NOW(), 17, 'Homer Simpson', 5);

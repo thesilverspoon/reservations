@@ -42,6 +42,11 @@ $ createdb -Omark_pg -Eutf8 silverspoon
 $ psql -U mark_pg silverspoon
 ```
 
+```
+$ psql -U mark_pg silverspoon < filename
+```
+
+
 psql prompt looks like this.
 ```
 silverspoon->
@@ -53,6 +58,7 @@ Other commands
 \l   // list databases
 \dt  // show tables
 \dt <name>
+\i <filename> // run filename with commands
 select * from restaurants;
 select * from reservations;
 ```
