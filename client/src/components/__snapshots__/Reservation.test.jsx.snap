@@ -4,7 +4,9 @@ exports[`Reservation Component should render correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Reservation />,
+  Symbol(enzyme.__unrendered__): <Reservation
+    id={300}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
