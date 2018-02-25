@@ -3,7 +3,7 @@ jest.mock('jquery');
 const helper = require('./helper');
 
 describe('client/src/lib/helper', () => {
-  test('should blah', () => {
+  test('send an AJAX request to the expected URL', () => {
     const id = 200;
     const date = '2018-04-01';
     helper.getReservationInfo(id, date, (err, data) => {
