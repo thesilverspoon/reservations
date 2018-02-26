@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   entry: './client/src/index.jsx',
 
@@ -22,6 +24,8 @@ module.exports = {
   },
 
   output: {
-    filename: './client/dist/bundle.js'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'client/dist'),
+    publicPath: '/'
   }
 };
