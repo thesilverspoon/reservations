@@ -12,7 +12,6 @@ class Reservation extends React.Component {
     super(props);
 
     this.state = {
-      // timeSlotsLeft: 0,
       bookingsMadeToday: 0,
       availabilityInfo: [
         { time: 17, remaining: 0 },
@@ -21,14 +20,15 @@ class Reservation extends React.Component {
         { time: 20, remaining: 2 },
         { time: 21, remaining: 20 },
       ],
-      // date: '',
-      // time: 17,
+      date: (new Date()).toISOString().slice(0, 10),
+      time: 17,
       name: '',
       party: 1,
     };
 
     this.setName = this.setName.bind(this);
     this.requestReservation = this.requestReservation.bind(this);
+    this.getAvailabilityInfo = this.getAvailabilityInfo.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +41,25 @@ class Reservation extends React.Component {
 
   requestReservation(time) {
     console.log('requestReservation', this.props.id, time, this.state.party);
+  }
+
+  getAvailabilityInfo(date, time, party) {
+    console.log('getAvailabilityInfo', this.props.id, date, time, party);
+    console.log('state vars', this.state.date, this.state.time, this.state.party);
+    helper.getReservationInfo(this.props.id, date, (err, data) => {
+      if (!err) {
+        console.log('getAvailabilityInfo', data);
+        this.setState({
+          availabilityInfo: data.reservations,
+          bookingsMadeToday: data.madeToday,
+          party,
+          date,
+          time,
+        });
+      } else {
+        console.log('getAvailabilityInfo', err);
+      }
+    });
   }
 
   fetch(date = (new Date()).toISOString().slice(0, 10)) {
@@ -62,7 +81,9 @@ class Reservation extends React.Component {
           name={this.state.name}
           clickHandler={this.setName}
         />
-        <SearchParams />
+        <SearchParams
+          clickHandler={this.getAvailabilityInfo}
+        />
         <TimeSlotSelector
           party={this.state.party}
           bookingsMadeToday={this.state.bookingsMadeToday}
