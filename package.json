@@ -50,11 +50,11 @@
     "jest": "^22.4.0",
     "nodemon": "^1.15.1",
     "react-test-renderer": "^16.2.0",
-    "supertest": "^3.0.0",
-    "webpack": "^3.11.0",
-    "webpack-dev-middleware": "^2.0.5"
+    "supertest": "^3.0.0"
   },
   "dependencies": {
+    "webpack": "^3.11.0",
+    "webpack-dev-middleware": "^2.0.6",
     "body-parser": "^1.18.2",
     "dotenv": "^5.0.0",
     "enzyme": "^3.3.0",
