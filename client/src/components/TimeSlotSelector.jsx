@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import TimeSlot from './TimeSlot';
 
 const TimeSlotSelector = (props) => {
-  const timeSlots = props.availabilityInfo.reduce((acc, item) => acc + (item.remaining > props.party
-    ? 1
-    : 0), 0);
+  const timeSlots = props.availabilityInfo.reduce((acc, item) =>
+    acc + (item.remaining >= props.party
+      ? 1
+      : 0), 0);
 
   let timeSlotMessage;
   if (timeSlots === 0) {
@@ -29,7 +30,7 @@ const TimeSlotSelector = (props) => {
       <div>
         { props.availabilityInfo.map(res => (<TimeSlot
           time={res.time}
-          available={res.remaining > props.party}
+          available={res.remaining >= props.party}
           clickHandler={props.clickHandler}
         />)) }
       </div>
