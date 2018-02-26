@@ -1,10 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TimeSlot Component should render correctly 1`] = `
+exports[`TimeSlot Component should render available times correctly 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TimeSlot />,
+  Symbol(enzyme.__unrendered__): <TimeSlot
+    available={true}
+    clickHandler={[Function]}
+    time={5}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,10 +21,34 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "TimeSlot",
+      "children": <button
+        disabled={false}
+        onClick={[Function]}
+      >
+        5
+        :00 PM
+      </button>,
     },
     "ref": null,
-    "rendered": "TimeSlot",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          5,
+          ":00 PM",
+        ],
+        "disabled": false,
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        5,
+        ":00 PM",
+      ],
+      "type": "button",
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -29,10 +57,132 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "TimeSlot",
+        "children": <button
+          disabled={false}
+          onClick={[Function]}
+        >
+          5
+          :00 PM
+        </button>,
       },
       "ref": null,
-      "rendered": "TimeSlot",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            5,
+            ":00 PM",
+          ],
+          "disabled": false,
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          5,
+          ":00 PM",
+        ],
+        "type": "button",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`TimeSlot Component should render unavailable times correctly 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TimeSlot
+    available={false}
+    clickHandler={[Function]}
+    time={5}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <button
+        disabled={true}
+        onClick={[Function]}
+      >
+        5
+        :00 PM
+      </button>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          5,
+          ":00 PM",
+        ],
+        "disabled": true,
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        5,
+        ":00 PM",
+      ],
+      "type": "button",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <button
+          disabled={true}
+          onClick={[Function]}
+        >
+          5
+          :00 PM
+        </button>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            5,
+            ":00 PM",
+          ],
+          "disabled": true,
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          5,
+          ":00 PM",
+        ],
+        "type": "button",
+      },
       "type": "div",
     },
   ],
