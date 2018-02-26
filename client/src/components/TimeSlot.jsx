@@ -7,7 +7,7 @@ const TimeSlot = props => (
       disabled={!props.available}
       onClick={() => props.clickHandler(props.time)}
     >
-      {props.time}:00 PM
+      {props.time > 12 ? props.time - 12 : props.time}:00 {props.time > 12 ? 'PM' : 'AM'}
     </button>
   </div>
 );
