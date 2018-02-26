@@ -17,9 +17,15 @@ class Reservation extends React.Component {
       availabilityInfo: [],
       // date: '',
       // time: 17,
-      // name: '',
+      name: '',
       // party: 1,
     };
+
+    this.setName = this.setName.bind(this);
+  }
+
+  setName(name) {
+    this.setState({ name });
   }
 
   componentDidMount() {
@@ -40,7 +46,10 @@ class Reservation extends React.Component {
   render() {
     return (
       <div>
-        <SetName />
+        <SetName
+          name={this.state.name}
+          clickHandler={this.setName}
+        />
         <SearchParams />
         <TimeSlotSelector />
       </div>
