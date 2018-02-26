@@ -20,7 +20,10 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <SetName />,
+        <SetName
+          clickHandler={[Function]}
+          name=""
+        />,
         <SearchParams />,
         <TimeSlotSelector />,
       ],
@@ -30,8 +33,11 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
+        "nodeType": "class",
+        "props": Object {
+          "clickHandler": [Function],
+          "name": "",
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -64,7 +70,10 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <SetName />,
+          <SetName
+            clickHandler={[Function]}
+            name=""
+          />,
           <SearchParams />,
           <TimeSlotSelector />,
         ],
@@ -74,8 +83,11 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
+          "nodeType": "class",
+          "props": Object {
+            "clickHandler": [Function],
+            "name": "",
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
