@@ -26,7 +26,8 @@ ShallowWrapper {
         onClick={[Function]}
       >
         5
-        :00 PM
+        :00 
+        AM
       </button>,
     },
     "ref": null,
@@ -37,7 +38,8 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           5,
-          ":00 PM",
+          ":00 ",
+          "AM",
         ],
         "disabled": false,
         "onClick": [Function],
@@ -45,7 +47,8 @@ ShallowWrapper {
       "ref": null,
       "rendered": Array [
         5,
-        ":00 PM",
+        ":00 ",
+        "AM",
       ],
       "type": "button",
     },
@@ -62,7 +65,8 @@ ShallowWrapper {
           onClick={[Function]}
         >
           5
-          :00 PM
+          :00 
+          AM
         </button>,
       },
       "ref": null,
@@ -73,7 +77,8 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             5,
-            ":00 PM",
+            ":00 ",
+            "AM",
           ],
           "disabled": false,
           "onClick": [Function],
@@ -81,7 +86,8 @@ ShallowWrapper {
         "ref": null,
         "rendered": Array [
           5,
-          ":00 PM",
+          ":00 ",
+          "AM",
         ],
         "type": "button",
       },
@@ -124,7 +130,8 @@ ShallowWrapper {
         onClick={[Function]}
       >
         5
-        :00 PM
+        :00 
+        AM
       </button>,
     },
     "ref": null,
@@ -135,7 +142,8 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           5,
-          ":00 PM",
+          ":00 ",
+          "AM",
         ],
         "disabled": true,
         "onClick": [Function],
@@ -143,7 +151,8 @@ ShallowWrapper {
       "ref": null,
       "rendered": Array [
         5,
-        ":00 PM",
+        ":00 ",
+        "AM",
       ],
       "type": "button",
     },
@@ -160,7 +169,8 @@ ShallowWrapper {
           onClick={[Function]}
         >
           5
-          :00 PM
+          :00 
+          AM
         </button>,
       },
       "ref": null,
@@ -171,7 +181,8 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             5,
-            ":00 PM",
+            ":00 ",
+            "AM",
           ],
           "disabled": true,
           "onClick": [Function],
@@ -179,7 +190,8 @@ ShallowWrapper {
         "ref": null,
         "rendered": Array [
           5,
-          ":00 PM",
+          ":00 ",
+          "AM",
         ],
         "type": "button",
       },

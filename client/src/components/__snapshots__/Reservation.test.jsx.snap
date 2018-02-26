@@ -25,7 +25,35 @@ ShallowWrapper {
           name=""
         />,
         <SearchParams />,
-        <TimeSlotSelector />,
+        <TimeSlotSelector
+          availabilityInfo={
+            Array [
+              Object {
+                "remaining": 0,
+                "time": 17,
+              },
+              Object {
+                "remaining": 5,
+                "time": 18,
+              },
+              Object {
+                "remaining": 3,
+                "time": 19,
+              },
+              Object {
+                "remaining": 2,
+                "time": 20,
+              },
+              Object {
+                "remaining": 20,
+                "time": 21,
+              },
+            ]
+          }
+          bookingsMadeToday={0}
+          clickHandler={[Function]}
+          party={1}
+        />,
       ],
     },
     "ref": null,
@@ -55,7 +83,33 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "availabilityInfo": Array [
+            Object {
+              "remaining": 0,
+              "time": 17,
+            },
+            Object {
+              "remaining": 5,
+              "time": 18,
+            },
+            Object {
+              "remaining": 3,
+              "time": 19,
+            },
+            Object {
+              "remaining": 2,
+              "time": 20,
+            },
+            Object {
+              "remaining": 20,
+              "time": 21,
+            },
+          ],
+          "bookingsMadeToday": 0,
+          "clickHandler": [Function],
+          "party": 1,
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -75,7 +129,35 @@ ShallowWrapper {
             name=""
           />,
           <SearchParams />,
-          <TimeSlotSelector />,
+          <TimeSlotSelector
+            availabilityInfo={
+              Array [
+                Object {
+                  "remaining": 0,
+                  "time": 17,
+                },
+                Object {
+                  "remaining": 5,
+                  "time": 18,
+                },
+                Object {
+                  "remaining": 3,
+                  "time": 19,
+                },
+                Object {
+                  "remaining": 2,
+                  "time": 20,
+                },
+                Object {
+                  "remaining": 20,
+                  "time": 21,
+                },
+              ]
+            }
+            bookingsMadeToday={0}
+            clickHandler={[Function]}
+            party={1}
+          />,
         ],
       },
       "ref": null,
@@ -105,7 +187,33 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "availabilityInfo": Array [
+              Object {
+                "remaining": 0,
+                "time": 17,
+              },
+              Object {
+                "remaining": 5,
+                "time": 18,
+              },
+              Object {
+                "remaining": 3,
+                "time": 19,
+              },
+              Object {
+                "remaining": 2,
+                "time": 20,
+              },
+              Object {
+                "remaining": 20,
+                "time": 21,
+              },
+            ],
+            "bookingsMadeToday": 0,
+            "clickHandler": [Function],
+            "party": 1,
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
