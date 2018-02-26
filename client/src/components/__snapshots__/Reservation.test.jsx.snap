@@ -29,11 +29,11 @@ ShallowWrapper {
           availabilityInfo={
             Array [
               Object {
-                "remaining": 0,
+                "remaining": 1,
                 "time": 17,
               },
               Object {
-                "remaining": 5,
+                "remaining": 2,
                 "time": 18,
               },
               Object {
@@ -41,16 +41,16 @@ ShallowWrapper {
                 "time": 19,
               },
               Object {
-                "remaining": 2,
+                "remaining": 4,
                 "time": 20,
               },
               Object {
-                "remaining": 20,
+                "remaining": 5,
                 "time": 21,
               },
             ]
           }
-          bookingsMadeToday={0}
+          bookingsMadeToday={200}
           clickHandler={[Function]}
           party={1}
         />,
@@ -86,11 +86,11 @@ ShallowWrapper {
         "props": Object {
           "availabilityInfo": Array [
             Object {
-              "remaining": 0,
+              "remaining": 1,
               "time": 17,
             },
             Object {
-              "remaining": 5,
+              "remaining": 2,
               "time": 18,
             },
             Object {
@@ -98,15 +98,15 @@ ShallowWrapper {
               "time": 19,
             },
             Object {
-              "remaining": 2,
+              "remaining": 4,
               "time": 20,
             },
             Object {
-              "remaining": 20,
+              "remaining": 5,
               "time": 21,
             },
           ],
-          "bookingsMadeToday": 0,
+          "bookingsMadeToday": 200,
           "clickHandler": [Function],
           "party": 1,
         },
@@ -133,11 +133,11 @@ ShallowWrapper {
             availabilityInfo={
               Array [
                 Object {
-                  "remaining": 0,
+                  "remaining": 1,
                   "time": 17,
                 },
                 Object {
-                  "remaining": 5,
+                  "remaining": 2,
                   "time": 18,
                 },
                 Object {
@@ -145,16 +145,16 @@ ShallowWrapper {
                   "time": 19,
                 },
                 Object {
-                  "remaining": 2,
+                  "remaining": 4,
                   "time": 20,
                 },
                 Object {
-                  "remaining": 20,
+                  "remaining": 5,
                   "time": 21,
                 },
               ]
             }
-            bookingsMadeToday={0}
+            bookingsMadeToday={200}
             clickHandler={[Function]}
             party={1}
           />,
@@ -190,11 +190,11 @@ ShallowWrapper {
           "props": Object {
             "availabilityInfo": Array [
               Object {
-                "remaining": 0,
+                "remaining": 1,
                 "time": 17,
               },
               Object {
-                "remaining": 5,
+                "remaining": 2,
                 "time": 18,
               },
               Object {
@@ -202,15 +202,15 @@ ShallowWrapper {
                 "time": 19,
               },
               Object {
-                "remaining": 2,
+                "remaining": 4,
                 "time": 20,
               },
               Object {
-                "remaining": 20,
+                "remaining": 5,
                 "time": 21,
               },
             ],
-            "bookingsMadeToday": 0,
+            "bookingsMadeToday": 200,
             "clickHandler": [Function],
             "party": 1,
           },
