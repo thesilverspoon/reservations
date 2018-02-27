@@ -10,7 +10,8 @@
     "build": "./node_modules/.bin/webpack",
     "build:watch": "./node_modules/.bin/webpack -w",
     "server-dev": "./node_modules/.bin/nodemon --inspect ./server/server.js",
-    "lint": "./node_modules/.bin/eslint ."
+    "lint": "./node_modules/.bin/eslint .",
+    "seed": "node ./server/db/seed.js"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/client/src/components/setupTests.js",
