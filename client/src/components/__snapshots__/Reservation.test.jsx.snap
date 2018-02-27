@@ -24,7 +24,9 @@ ShallowWrapper {
           clickHandler={[Function]}
           name=""
         />,
-        <SearchParams />,
+        <SearchParams
+          clickHandler={[Function]}
+        />,
         <TimeSlotSelector
           availabilityInfo={
             Array [
@@ -73,8 +75,10 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
+        "nodeType": "class",
+        "props": Object {
+          "clickHandler": [Function],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -128,7 +132,9 @@ ShallowWrapper {
             clickHandler={[Function]}
             name=""
           />,
-          <SearchParams />,
+          <SearchParams
+            clickHandler={[Function]}
+          />,
           <TimeSlotSelector
             availabilityInfo={
               Array [
@@ -177,8 +183,10 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
+          "nodeType": "class",
+          "props": Object {
+            "clickHandler": [Function],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
