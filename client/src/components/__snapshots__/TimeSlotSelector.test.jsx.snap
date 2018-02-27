@@ -1,10 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TimeSlotSelector Component should render correctly 1`] = `
+exports[`TimeSlotSelector Component should have appropriate message for 1 available time slot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TimeSlotSelector />,
+  Symbol(enzyme.__unrendered__): <TimeSlotSelector
+    availabilityInfo={
+      Array [
+        Object {
+          "remaining": 0,
+          "time": 17,
+        },
+        Object {
+          "remaining": 5,
+          "time": 18,
+        },
+        Object {
+          "remaining": 3,
+          "time": 19,
+        },
+        Object {
+          "remaining": 2,
+          "time": 20,
+        },
+        Object {
+          "remaining": 1,
+          "time": 21,
+        },
+      ]
+    }
+    bookingsMadeToday={25}
+    clickHandler={[Function]}
+    party={5}
+  />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,10 +45,202 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "TimeSlotSelector",
+      "children": Array [
+        <div>
+          <span
+            aria-label="upward trend chart"
+            role="img"
+          >
+            📈
+          </span>
+          25
+           bookings made today!
+        </div>,
+        <div>
+          Hurry, only 1 time slot available!
+        </div>,
+        <div>
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={17}
+          />
+          <TimeSlot
+            available={true}
+            clickHandler={[Function]}
+            time={18}
+          />
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={19}
+          />
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={20}
+          />
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={21}
+          />
+        </div>,
+      ],
     },
     "ref": null,
-    "rendered": "TimeSlotSelector",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              aria-label="upward trend chart"
+              role="img"
+            >
+              📈
+            </span>,
+            25,
+            " bookings made today!",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-label": "upward trend chart",
+              "children": "📈",
+              "role": "img",
+            },
+            "ref": null,
+            "rendered": "📈",
+            "type": "span",
+          },
+          25,
+          " bookings made today!",
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Hurry, only 1 time slot available!",
+        },
+        "ref": null,
+        "rendered": "Hurry, only 1 time slot available!",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={17}
+            />,
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={18}
+            />,
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={19}
+            />,
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={20}
+            />,
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={21}
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 17,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": true,
+              "clickHandler": [Function],
+              "time": 18,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 19,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 20,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 21,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -29,10 +249,1576 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "TimeSlotSelector",
+        "children": Array [
+          <div>
+            <span
+              aria-label="upward trend chart"
+              role="img"
+            >
+              📈
+            </span>
+            25
+             bookings made today!
+          </div>,
+          <div>
+            Hurry, only 1 time slot available!
+          </div>,
+          <div>
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={17}
+            />
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={18}
+            />
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={19}
+            />
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={20}
+            />
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={21}
+            />
+          </div>,
+        ],
       },
       "ref": null,
-      "rendered": "TimeSlotSelector",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                aria-label="upward trend chart"
+                role="img"
+              >
+                📈
+              </span>,
+              25,
+              " bookings made today!",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-label": "upward trend chart",
+                "children": "📈",
+                "role": "img",
+              },
+              "ref": null,
+              "rendered": "📈",
+              "type": "span",
+            },
+            25,
+            " bookings made today!",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Hurry, only 1 time slot available!",
+          },
+          "ref": null,
+          "rendered": "Hurry, only 1 time slot available!",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={17}
+              />,
+              <TimeSlot
+                available={true}
+                clickHandler={[Function]}
+                time={18}
+              />,
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={19}
+              />,
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={20}
+              />,
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={21}
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 17,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": true,
+                "clickHandler": [Function],
+                "time": 18,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 19,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 20,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 21,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`TimeSlotSelector Component should have appropriate message for no time slots 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TimeSlotSelector
+    availabilityInfo={
+      Array [
+        Object {
+          "remaining": 0,
+          "time": 17,
+        },
+        Object {
+          "remaining": 5,
+          "time": 18,
+        },
+        Object {
+          "remaining": 3,
+          "time": 19,
+        },
+        Object {
+          "remaining": 2,
+          "time": 20,
+        },
+        Object {
+          "remaining": 1,
+          "time": 21,
+        },
+      ]
+    }
+    bookingsMadeToday={25}
+    clickHandler={[Function]}
+    party={7}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <span
+            aria-label="upward trend chart"
+            role="img"
+          >
+            📈
+          </span>
+          25
+           bookings made today!
+        </div>,
+        <div>
+          We're sorry, no tables are available
+        </div>,
+        <div>
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={17}
+          />
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={18}
+          />
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={19}
+          />
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={20}
+          />
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={21}
+          />
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              aria-label="upward trend chart"
+              role="img"
+            >
+              📈
+            </span>,
+            25,
+            " bookings made today!",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-label": "upward trend chart",
+              "children": "📈",
+              "role": "img",
+            },
+            "ref": null,
+            "rendered": "📈",
+            "type": "span",
+          },
+          25,
+          " bookings made today!",
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "We're sorry, no tables are available",
+        },
+        "ref": null,
+        "rendered": "We're sorry, no tables are available",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={17}
+            />,
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={18}
+            />,
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={19}
+            />,
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={20}
+            />,
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={21}
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 17,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 18,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 19,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 20,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 21,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <span
+              aria-label="upward trend chart"
+              role="img"
+            >
+              📈
+            </span>
+            25
+             bookings made today!
+          </div>,
+          <div>
+            We're sorry, no tables are available
+          </div>,
+          <div>
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={17}
+            />
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={18}
+            />
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={19}
+            />
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={20}
+            />
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={21}
+            />
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                aria-label="upward trend chart"
+                role="img"
+              >
+                📈
+              </span>,
+              25,
+              " bookings made today!",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-label": "upward trend chart",
+                "children": "📈",
+                "role": "img",
+              },
+              "ref": null,
+              "rendered": "📈",
+              "type": "span",
+            },
+            25,
+            " bookings made today!",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "We're sorry, no tables are available",
+          },
+          "ref": null,
+          "rendered": "We're sorry, no tables are available",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={17}
+              />,
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={18}
+              />,
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={19}
+              />,
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={20}
+              />,
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={21}
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 17,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 18,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 19,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 20,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 21,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`TimeSlotSelector Component should render correctly for multiple available time slots 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TimeSlotSelector
+    availabilityInfo={
+      Array [
+        Object {
+          "remaining": 0,
+          "time": 17,
+        },
+        Object {
+          "remaining": 5,
+          "time": 18,
+        },
+        Object {
+          "remaining": 3,
+          "time": 19,
+        },
+        Object {
+          "remaining": 2,
+          "time": 20,
+        },
+        Object {
+          "remaining": 1,
+          "time": 21,
+        },
+      ]
+    }
+    bookingsMadeToday={25}
+    clickHandler={[Function]}
+    party={2}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <span
+            aria-label="upward trend chart"
+            role="img"
+          >
+            📈
+          </span>
+          25
+           bookings made today!
+        </div>,
+        <div>
+          3 time slots available!
+        </div>,
+        <div>
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={17}
+          />
+          <TimeSlot
+            available={true}
+            clickHandler={[Function]}
+            time={18}
+          />
+          <TimeSlot
+            available={true}
+            clickHandler={[Function]}
+            time={19}
+          />
+          <TimeSlot
+            available={true}
+            clickHandler={[Function]}
+            time={20}
+          />
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={21}
+          />
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              aria-label="upward trend chart"
+              role="img"
+            >
+              📈
+            </span>,
+            25,
+            " bookings made today!",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-label": "upward trend chart",
+              "children": "📈",
+              "role": "img",
+            },
+            "ref": null,
+            "rendered": "📈",
+            "type": "span",
+          },
+          25,
+          " bookings made today!",
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "3 time slots available!",
+        },
+        "ref": null,
+        "rendered": "3 time slots available!",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={17}
+            />,
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={18}
+            />,
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={19}
+            />,
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={20}
+            />,
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={21}
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 17,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": true,
+              "clickHandler": [Function],
+              "time": 18,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": true,
+              "clickHandler": [Function],
+              "time": 19,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": true,
+              "clickHandler": [Function],
+              "time": 20,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 21,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <span
+              aria-label="upward trend chart"
+              role="img"
+            >
+              📈
+            </span>
+            25
+             bookings made today!
+          </div>,
+          <div>
+            3 time slots available!
+          </div>,
+          <div>
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={17}
+            />
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={18}
+            />
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={19}
+            />
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={20}
+            />
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={21}
+            />
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                aria-label="upward trend chart"
+                role="img"
+              >
+                📈
+              </span>,
+              25,
+              " bookings made today!",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-label": "upward trend chart",
+                "children": "📈",
+                "role": "img",
+              },
+              "ref": null,
+              "rendered": "📈",
+              "type": "span",
+            },
+            25,
+            " bookings made today!",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "3 time slots available!",
+          },
+          "ref": null,
+          "rendered": "3 time slots available!",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={17}
+              />,
+              <TimeSlot
+                available={true}
+                clickHandler={[Function]}
+                time={18}
+              />,
+              <TimeSlot
+                available={true}
+                clickHandler={[Function]}
+                time={19}
+              />,
+              <TimeSlot
+                available={true}
+                clickHandler={[Function]}
+                time={20}
+              />,
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={21}
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 17,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": true,
+                "clickHandler": [Function],
+                "time": 18,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": true,
+                "clickHandler": [Function],
+                "time": 19,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": true,
+                "clickHandler": [Function],
+                "time": 20,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 21,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`TimeSlotSelector Component should render correctly for no bookings made today 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TimeSlotSelector
+    availabilityInfo={
+      Array [
+        Object {
+          "remaining": 0,
+          "time": 17,
+        },
+        Object {
+          "remaining": 5,
+          "time": 18,
+        },
+        Object {
+          "remaining": 3,
+          "time": 19,
+        },
+        Object {
+          "remaining": 2,
+          "time": 20,
+        },
+        Object {
+          "remaining": 1,
+          "time": 21,
+        },
+      ]
+    }
+    bookingsMadeToday={0}
+    clickHandler={[Function]}
+    party={2}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <span
+            aria-label="upward trend chart"
+            role="img"
+          >
+            📈
+          </span>
+          0
+           bookings made today!
+        </div>,
+        <div>
+          3 time slots available!
+        </div>,
+        <div>
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={17}
+          />
+          <TimeSlot
+            available={true}
+            clickHandler={[Function]}
+            time={18}
+          />
+          <TimeSlot
+            available={true}
+            clickHandler={[Function]}
+            time={19}
+          />
+          <TimeSlot
+            available={true}
+            clickHandler={[Function]}
+            time={20}
+          />
+          <TimeSlot
+            available={false}
+            clickHandler={[Function]}
+            time={21}
+          />
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              aria-label="upward trend chart"
+              role="img"
+            >
+              📈
+            </span>,
+            0,
+            " bookings made today!",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "aria-label": "upward trend chart",
+              "children": "📈",
+              "role": "img",
+            },
+            "ref": null,
+            "rendered": "📈",
+            "type": "span",
+          },
+          0,
+          " bookings made today!",
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "3 time slots available!",
+        },
+        "ref": null,
+        "rendered": "3 time slots available!",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={17}
+            />,
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={18}
+            />,
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={19}
+            />,
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={20}
+            />,
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={21}
+            />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 17,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": true,
+              "clickHandler": [Function],
+              "time": 18,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": true,
+              "clickHandler": [Function],
+              "time": 19,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": true,
+              "clickHandler": [Function],
+              "time": 20,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "available": false,
+              "clickHandler": [Function],
+              "time": 21,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <span
+              aria-label="upward trend chart"
+              role="img"
+            >
+              📈
+            </span>
+            0
+             bookings made today!
+          </div>,
+          <div>
+            3 time slots available!
+          </div>,
+          <div>
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={17}
+            />
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={18}
+            />
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={19}
+            />
+            <TimeSlot
+              available={true}
+              clickHandler={[Function]}
+              time={20}
+            />
+            <TimeSlot
+              available={false}
+              clickHandler={[Function]}
+              time={21}
+            />
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                aria-label="upward trend chart"
+                role="img"
+              >
+                📈
+              </span>,
+              0,
+              " bookings made today!",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-label": "upward trend chart",
+                "children": "📈",
+                "role": "img",
+              },
+              "ref": null,
+              "rendered": "📈",
+              "type": "span",
+            },
+            0,
+            " bookings made today!",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "3 time slots available!",
+          },
+          "ref": null,
+          "rendered": "3 time slots available!",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={17}
+              />,
+              <TimeSlot
+                available={true}
+                clickHandler={[Function]}
+                time={18}
+              />,
+              <TimeSlot
+                available={true}
+                clickHandler={[Function]}
+                time={19}
+              />,
+              <TimeSlot
+                available={true}
+                clickHandler={[Function]}
+                time={20}
+              />,
+              <TimeSlot
+                available={false}
+                clickHandler={[Function]}
+                time={21}
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 17,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": true,
+                "clickHandler": [Function],
+                "time": 18,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": true,
+                "clickHandler": [Function],
+                "time": 19,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": true,
+                "clickHandler": [Function],
+                "time": 20,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "available": false,
+                "clickHandler": [Function],
+                "time": 21,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
       "type": "div",
     },
   ],

@@ -14,22 +14,33 @@ class Reservation extends React.Component {
     this.state = {
       // timeSlotsLeft: 0,
       bookingsMadeToday: 0,
-      availabilityInfo: [],
+      availabilityInfo: [
+        { time: 17, remaining: 0 },
+        { time: 18, remaining: 5 },
+        { time: 19, remaining: 3 },
+        { time: 20, remaining: 2 },
+        { time: 21, remaining: 20 },
+      ],
       // date: '',
       // time: 17,
       name: '',
-      // party: 1,
+      party: 1,
     };
 
     this.setName = this.setName.bind(this);
+    this.requestReservation = this.requestReservation.bind(this);
+  }
+
+  componentDidMount() {
+    this.fetch();
   }
 
   setName(name) {
     this.setState({ name });
   }
 
-  componentDidMount() {
-    this.fetch();
+  requestReservation(time) {
+    console.log('requestReservation', this.props.id, time, this.state.party);
   }
 
   fetch(date = (new Date()).toISOString().slice(0, 10)) {
@@ -43,6 +54,7 @@ class Reservation extends React.Component {
     });
   }
 
+
   render() {
     return (
       <div>
@@ -51,7 +63,12 @@ class Reservation extends React.Component {
           clickHandler={this.setName}
         />
         <SearchParams />
-        <TimeSlotSelector />
+        <TimeSlotSelector
+          party={this.state.party}
+          bookingsMadeToday={this.state.bookingsMadeToday}
+          availabilityInfo={this.state.availabilityInfo}
+          clickHandler={this.requestReservation}
+        />
       </div>
     );
   }
