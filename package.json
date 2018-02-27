@@ -25,7 +25,10 @@
       "sampleData.js",
       "webpack.config.js",
       "bundle.js",
-      "/coverage/"
+      "/coverage/",
+      "knexfile.js",
+      "/server/db/seed.js",
+      "/server/db/migrations"
     ]
   },
   "repository": {
