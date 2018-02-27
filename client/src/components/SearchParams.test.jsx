@@ -7,7 +7,7 @@ import SearchParams from './SearchParams';
 describe('SearchParams Component', () => {
   beforeAll(() => {
     // hard code a date for 'new Date()'
-    MockDate.set('4/1/2018');
+    MockDate.set('4/1/2018', 0);
   });
 
   afterAll(() => {
