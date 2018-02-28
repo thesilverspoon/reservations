@@ -40,7 +40,19 @@ class Reservation extends React.Component {
   }
 
   requestReservation(time) {
-    console.log('requestReservation', this.props.id, time, this.state.party);
+    // console.log('requestReservation', this.props.id, time, this.state.party);
+    helper.requestReservation(
+      this.props.id, this.state.date, time, this.state.name, this.state.party,
+      (err) => {
+        if (!err) {
+          // success
+          console.log('requestReservation success');
+        } else {
+          // error
+          console.log('requestReservation error');
+        }
+      },
+    );
   }
 
   getAvailabilityInfo(date, time, party) {

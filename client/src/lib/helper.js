@@ -1,22 +1,43 @@
 import $ from 'jquery';
 
-const BASE_URL = 'http://localhost:3001';
-
 const getReservationInfo = (id, date, callback) => {
   $.ajax({
-    url: `${BASE_URL}/restaurants/${id}/reservations/${date}`,
+    url: `/restaurants/${id}/reservations/${date}`,
     method: 'GET',
     success: (data) => {
       console.log('ajax GET success', data);
       callback(null, data);
-      // return new Promise(resolve => resolve(data));
     },
     error: (jqxhr, errString, errThrown) => {
       console.log('ajax GET error', jqxhr, errString, errThrown);
       callback(errString, null);
-      // return new Promise((resolve, reject) => reject(errString));
     },
   });
 };
 
-module.exports.getReservationInfo = getReservationInfo;
+const requestReservation = (id, date, time, name, party, callback) => {
+  $.ajax({
+    url: '/reservations',
+    method: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify({
+      restaurantId: id,
+      date,
+      time,
+      name,
+      party,
+    }),
+    success: (result) => {
+      console.log('ajax POST success', result);
+      callback(null, result);
+    },
+    error: (error) => {
+      console.log('ajax POST error', error);
+      callback(error, null);
+    },
+  });
+};
+
+module.exports = {
+  getReservationInfo, requestReservation,
+};
