@@ -1,8 +1,9 @@
-jest.unmock('pg');
+// jest.unmock('pg');
 
 const express = require('express');
 const request = require('supertest');
-const db = require('../db');
+
+jest.mock('../db');
 
 const reservationsRouter = require('./reservations');
 
@@ -15,7 +16,7 @@ describe('reservations Router', () => {
   });
 
   afterAll(() => {
-    db.client.end();
+    jest.unmock('../db');
   });
 
   test('should return a 201 on a proper POST request', (done) => {
