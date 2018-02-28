@@ -8,4 +8,18 @@ const addReservation = ({ restaurantId }) => {
   return new Promise((resolve, reject) => reject());
 };
 
-module.exports.addReservation = addReservation;
+const bookingsToday = () => new Promise(resolve => resolve({ rows: [{ count: 250 }] }));
+
+const getOpenSeats = () => new Promise((resolve) => {
+  resolve({
+    rows: [{
+      time: 17,
+      remaining: 50,
+    }],
+  });
+});
+
+
+module.exports = {
+  addReservation, bookingsToday, getOpenSeats,
+};
