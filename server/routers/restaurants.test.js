@@ -28,7 +28,7 @@ describe('restaurants router', () => {
     test('should return 200 response', () => request(app).get(url)
       .then(response => expect(response.statusCode).toBe(200)));
 
-    test('should return expected object shape', async () => {
+    test('should return expected object shape', async (done) => {
       const response = await request(app).get(url);
 
       const expectedObject = {
@@ -37,7 +37,7 @@ describe('restaurants router', () => {
       };
 
       expect(response.body).toMatchObject(expectedObject);
-
+      done();
       // .then((response) => {
       //   const expectedObject = {
       //     madeToday: expect.any(Number),
