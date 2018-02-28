@@ -1,10 +1,8 @@
 const express = require('express');
 const request = require('supertest');
 
-// jest.unmock('pg');
-// jest.unmock('../db');
 jest.mock('../db');
-// const db = require('../db');
+
 const restaurantsRouter = require('./restaurants');
 
 const today = (new Date()).toISOString().slice(0, 10);
@@ -19,10 +17,6 @@ describe('restaurants router', () => {
   beforeAll(() => {
     app = express();
     app.use('/restaurants', restaurantsRouter);
-  });
-
-  afterAll(() => {
-    // db.client.end();
   });
 
   describe('GET /restaurants/:id/reservations/', () => {
