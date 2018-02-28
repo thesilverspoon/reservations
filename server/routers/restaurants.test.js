@@ -25,12 +25,13 @@ describe('restaurants router', () => {
   });
 
   describe('GET /restaurants/:id/reservations/', () => {
-    test('should return 200 response', () => request(app).get(url)
+    test('should return 200 response', done => request(app).get(url)
       .then((response) => {
         expect(response.statusCode).toBe(200);
+        done();
       }));
 
-    test('should return expected object shape', () => request(app).get(url)
+    test('should return expected object shape', done => request(app).get(url)
       .then((response) => {
         const expectedObject = {
           madeToday: expect.any(Number),
@@ -44,9 +45,10 @@ describe('restaurants router', () => {
 
         expect(response.body).toMatchObject(expectedObject);
         expect(response.body.reservations[0]).toMatchObject(expectedReservation);
+        done();
       }));
 
-    test('should return expected reservation information', () => request(app).get(url)
+    test('should return expected reservation information', done => request(app).get(url)
       .then((response) => {
         const expectedReservation = {
           time: expect.any(Number),
@@ -55,16 +57,18 @@ describe('restaurants router', () => {
 
         expect(response.body.reservations).toBeInstanceOf(Array);
         expect(response.body.reservations[0]).toMatchObject(expectedReservation);
+        done();
       }));
   });
 
   describe(`GET /restaurants/:id/reservations/${today}`, () => {
-    test('should return 200 response', () => request(app).get(urlWithDate)
+    test('should return 200 response', done => request(app).get(urlWithDate)
       .then((response) => {
         expect(response.statusCode).toBe(200);
+        done();
       }));
 
-    test('should return expected object shape', () => request(app).get(urlWithDate)
+    test('should return expected object shape', done => request(app).get(urlWithDate)
       .then((response) => {
         const expectedObject = {
           madeToday: expect.any(Number),
@@ -78,9 +82,10 @@ describe('restaurants router', () => {
 
         expect(response.body).toMatchObject(expectedObject);
         expect(response.body.reservations[0]).toMatchObject(expectedReservation);
+        done();
       }));
 
-    test('should return expected reservation information', () => request(app).get(urlWithDate)
+    test('should return expected reservation information', done => request(app).get(urlWithDate)
       .then((response) => {
         const expectedReservation = {
           time: expect.any(Number),
@@ -89,6 +94,7 @@ describe('restaurants router', () => {
 
         expect(response.body.reservations).toBeInstanceOf(Array);
         expect(response.body.reservations[0]).toMatchObject(expectedReservation);
+        done();
       }));
   });
 });
