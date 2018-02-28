@@ -1,61 +1,37 @@
 const express = require('express');
 
+const db = require('../db');
+
 const router = express.Router();
 
-router.get('/:id/reservations/:date', (req, res) => {
-  const response = {
-    madeToday: 100,
-    reservations: [{
-      time: 17,
-      remaining: 20,
-    },
-    {
-      time: 18,
-      remaining: 3,
-    },
-    {
-      time: 19,
-      remaining: 0,
-    },
-    {
-      time: 20,
-      remaining: 5,
-    },
-    {
-      time: 21,
-      remaining: 14,
-    },
-    ],
-  };
-  res.send(response);
-});
+router.get('/:id/reservations/:date?', (req, res) => {
+  const dateParam = req.params.date
+    ? req.params.date
+    : (new Date()).toISOString().slice(0, 10);
 
-router.get('/:id/reservations', (req, res) => {
-  const response = {
-    madeToday: 100,
-    reservations: [{
-      time: 17,
-      remaining: 20,
-    },
-    {
-      time: 18,
-      remaining: 3,
-    },
-    {
-      time: 19,
-      remaining: 0,
-    },
-    {
-      time: 20,
-      remaining: 5,
-    },
-    {
-      time: 21,
-      remaining: 14,
-    },
-    ],
-  };
-  res.send(response);
+  Promise.all([
+    db.bookingsToday(req.params.id),
+    db.getOpenSeats({
+      restaurantId: req.params.id,
+      date: dateParam,
+    }),
+  ])
+    .then((results) => {
+      // results[0] has the # bookings made info
+      // results[1] has the timeslot & remaining seats info
+      const output = {
+        madeToday: Number(results[0].rows[0].count),
+        reservations: results[1].rows.map(row => ({
+          time: row.time,
+          remaining: Number(row.remaining),
+        })),
+      };
+      res.send(output);
+    })
+    .catch((error) => {
+      console.log('Promise.all error', error);
+      res.sendStatus(500);
+    });
 });
 
 module.exports = router;
