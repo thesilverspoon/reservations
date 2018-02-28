@@ -1,7 +1,8 @@
 const express = require('express');
 const request = require('supertest');
 
-jest.unmock('pg');
+// jest.unmock('pg');
+jest.mock('../db');
 
 const reservationsRouter = require('./reservations');
 
