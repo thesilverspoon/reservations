@@ -16,10 +16,17 @@ client.on('error', (error) => {
   console.error('pg client error', error);
 });
 
-const getOpenSeats = (restaurantId, date) => {
-  console.log(date, restaurantId);
-  return 0;
-};
+const bookingsToday = restaurantId => client.query(
+  'SELECT COUNT(id) FROM reservations WHERE restaurantid=$1 AND timestamp=$2',
+  [restaurantId, (new Date()).toISOString().slice(0, 10)],
+);
+
+const getOpenSeats = ({
+  restaurantId, date,
+}) => client.query(
+  'SELECT time,(MAX(restaurants.seats)-SUM(party)) AS remaining FROM reservations INNER JOIN restaurants ON restaurants.id = reservations.restaurantid WHERE date=$1 AND restaurantid=$2 GROUP BY time',
+  [date, restaurantId],
+);
 
 const addReservation = ({
   restaurantId, date, time, name, party,
@@ -35,4 +42,6 @@ const addRestaurantInfo = ({
   [id, name, seats],
 );
 
-module.exports = { getOpenSeats, addReservation, addRestaurantInfo };
+module.exports = {
+  client, bookingsToday, getOpenSeats, addReservation, addRestaurantInfo,
+};
