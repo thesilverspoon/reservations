@@ -5,6 +5,10 @@ jest.mock('pg');
 const db = require('./index');
 
 describe('db/index.js', () => {
+  afterAll(() => {
+    jest.unmock('pg');
+  });
+
   describe('bookingsToday', () => {
     test('should run count reservations made today for a restaurant', () => {
       const restaurantId = 305;
