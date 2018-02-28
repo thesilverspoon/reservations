@@ -1,9 +1,10 @@
 const express = require('express');
 const request = require('supertest');
 
-jest.unmock('pg');
-jest.unmock('../db');
-const db = require('../db');
+// jest.unmock('pg');
+// jest.unmock('../db');
+jest.mock('../db');
+// const db = require('../db');
 const restaurantsRouter = require('./restaurants');
 
 const today = (new Date()).toISOString().slice(0, 10);
@@ -21,31 +22,23 @@ describe('restaurants router', () => {
   });
 
   afterAll(() => {
-    db.client.end();
+    // db.client.end();
   });
 
   describe('GET /restaurants/:id/reservations/', () => {
     test('should return 200 response', () => request(app).get(url)
       .then(response => expect(response.statusCode).toBe(200)));
 
-    test('should return expected object shape', async (done) => {
-      const response = await request(app).get(url);
+    test('should return expected object shape', () => request(app).get(url)
+      .then((response) => {
+        const expectedObject = {
+          madeToday: expect.any(Number),
+          reservations: expect.any(Array),
+        };
 
-      const expectedObject = {
-        madeToday: expect.any(Number),
-        reservations: expect.any(Array),
-      };
+        return expect(response.body).toMatchObject(expectedObject);
+      }));
 
-      expect(response.body).toMatchObject(expectedObject);
-      done();
-      // .then((response) => {
-      //   const expectedObject = {
-      //     madeToday: expect.any(Number),
-      //     reservations: expect.any(Array),
-      //   };
-
-      //   return expect(response.body).toMatchObject(expectedObject);
-    });
 
     test('should return expected reservation information', () => request(app).get(url)
       .then((response) => {
@@ -58,7 +51,7 @@ describe('restaurants router', () => {
       }));
   });
 
-  xdescribe(`GET /restaurants/:id/reservations/${today}`, () => {
+  describe(`GET /restaurants/:id/reservations/${today}`, () => {
     test('should return 200 response', () => request(app).get(urlWithDate)
       .then(response => expect(response.statusCode).toBe(200)));
 
