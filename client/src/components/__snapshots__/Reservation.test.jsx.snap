@@ -5,7 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Reservation
-    id={100}
+    id={305}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -31,31 +31,34 @@ ShallowWrapper {
           availabilityInfo={
             Array [
               Object {
-                "remaining": 1,
+                "remaining": 10,
                 "time": 17,
               },
               Object {
-                "remaining": 2,
+                "remaining": 5,
                 "time": 18,
               },
               Object {
-                "remaining": 3,
+                "remaining": 0,
                 "time": 19,
               },
               Object {
-                "remaining": 4,
+                "remaining": 2,
                 "time": 20,
               },
               Object {
-                "remaining": 5,
+                "remaining": 20,
                 "time": 21,
               },
             ]
           }
-          bookingsMadeToday={200}
+          bookingsMadeToday={42}
           clickHandler={[Function]}
-          party={1}
+          party={2}
         />,
+        <div>
+          
+        </div>,
       ],
     },
     "ref": null,
@@ -90,33 +93,44 @@ ShallowWrapper {
         "props": Object {
           "availabilityInfo": Array [
             Object {
-              "remaining": 1,
+              "remaining": 10,
               "time": 17,
             },
             Object {
-              "remaining": 2,
+              "remaining": 5,
               "time": 18,
             },
             Object {
-              "remaining": 3,
+              "remaining": 0,
               "time": 19,
             },
             Object {
-              "remaining": 4,
+              "remaining": 2,
               "time": 20,
             },
             Object {
-              "remaining": 5,
+              "remaining": 20,
               "time": 21,
             },
           ],
-          "bookingsMadeToday": 200,
+          "bookingsMadeToday": 42,
           "clickHandler": [Function],
-          "party": 1,
+          "party": 2,
         },
         "ref": null,
         "rendered": null,
         "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "",
+        },
+        "ref": null,
+        "rendered": "",
+        "type": "div",
       },
     ],
     "type": "div",
@@ -139,31 +153,34 @@ ShallowWrapper {
             availabilityInfo={
               Array [
                 Object {
-                  "remaining": 1,
+                  "remaining": 10,
                   "time": 17,
                 },
                 Object {
-                  "remaining": 2,
+                  "remaining": 5,
                   "time": 18,
                 },
                 Object {
-                  "remaining": 3,
+                  "remaining": 0,
                   "time": 19,
                 },
                 Object {
-                  "remaining": 4,
+                  "remaining": 2,
                   "time": 20,
                 },
                 Object {
-                  "remaining": 5,
+                  "remaining": 20,
                   "time": 21,
                 },
               ]
             }
-            bookingsMadeToday={200}
+            bookingsMadeToday={42}
             clickHandler={[Function]}
-            party={1}
+            party={2}
           />,
+          <div>
+            
+          </div>,
         ],
       },
       "ref": null,
@@ -198,33 +215,44 @@ ShallowWrapper {
           "props": Object {
             "availabilityInfo": Array [
               Object {
-                "remaining": 1,
+                "remaining": 10,
                 "time": 17,
               },
               Object {
-                "remaining": 2,
+                "remaining": 5,
                 "time": 18,
               },
               Object {
-                "remaining": 3,
+                "remaining": 0,
                 "time": 19,
               },
               Object {
-                "remaining": 4,
+                "remaining": 2,
                 "time": 20,
               },
               Object {
-                "remaining": 5,
+                "remaining": 20,
                 "time": 21,
               },
             ],
-            "bookingsMadeToday": 200,
+            "bookingsMadeToday": 42,
             "clickHandler": [Function],
-            "party": 1,
+            "party": 2,
           },
           "ref": null,
           "rendered": null,
           "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "",
+          },
+          "ref": null,
+          "rendered": "",
+          "type": "div",
         },
       ],
       "type": "div",
