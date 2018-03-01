@@ -22,6 +22,7 @@ ShallowWrapper {
       "children": Array [
         <div>
           <select
+            className={undefined}
             name="partySize"
             onChange={[Function]}
             value={2}
@@ -130,6 +131,7 @@ ShallowWrapper {
         </div>,
         <div>
           <select
+            className={undefined}
             name="time"
             onChange={[Function]}
             value={19}
@@ -173,12 +175,14 @@ ShallowWrapper {
         </div>,
         <div>
           <button
+            className={undefined}
             onClick={[Function]}
           >
             Find a Table
           </button>
         </div>,
       ],
+      "className": undefined,
     },
     "ref": null,
     "rendered": Array [
@@ -188,6 +192,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <select
+            className={undefined}
             name="partySize"
             onChange={[Function]}
             value={2}
@@ -342,6 +347,7 @@ ShallowWrapper {
                 People
               </option>,
             ],
+            "className": undefined,
             "name": "partySize",
             "onChange": [Function],
             "value": 2,
@@ -628,6 +634,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <select
+            className={undefined}
             name="time"
             onChange={[Function]}
             value={19}
@@ -712,6 +719,7 @@ ShallowWrapper {
                 PM
               </option>,
             ],
+            "className": undefined,
             "name": "time",
             "onChange": [Function],
             "value": 19,
@@ -829,6 +837,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <button
+            className={undefined}
             onClick={[Function]}
           >
             Find a Table
@@ -841,6 +850,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Find a Table",
+            "className": undefined,
             "onClick": [Function],
           },
           "ref": null,
@@ -861,6 +871,7 @@ ShallowWrapper {
         "children": Array [
           <div>
             <select
+              className={undefined}
               name="partySize"
               onChange={[Function]}
               value={2}
@@ -969,6 +980,7 @@ ShallowWrapper {
           </div>,
           <div>
             <select
+              className={undefined}
               name="time"
               onChange={[Function]}
               value={19}
@@ -1012,12 +1024,14 @@ ShallowWrapper {
           </div>,
           <div>
             <button
+              className={undefined}
               onClick={[Function]}
             >
               Find a Table
             </button>
           </div>,
         ],
+        "className": undefined,
       },
       "ref": null,
       "rendered": Array [
@@ -1027,6 +1041,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <select
+              className={undefined}
               name="partySize"
               onChange={[Function]}
               value={2}
@@ -1181,6 +1196,7 @@ ShallowWrapper {
                   People
                 </option>,
               ],
+              "className": undefined,
               "name": "partySize",
               "onChange": [Function],
               "value": 2,
@@ -1467,6 +1483,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <select
+              className={undefined}
               name="time"
               onChange={[Function]}
               value={19}
@@ -1551,6 +1568,7 @@ ShallowWrapper {
                   PM
                 </option>,
               ],
+              "className": undefined,
               "name": "time",
               "onChange": [Function],
               "value": 19,
@@ -1668,6 +1686,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <button
+              className={undefined}
               onClick={[Function]}
             >
               Find a Table
@@ -1680,6 +1699,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Find a Table",
+              "className": undefined,
               "onClick": [Function],
             },
             "ref": null,
