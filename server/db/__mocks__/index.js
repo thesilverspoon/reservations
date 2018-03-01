@@ -21,7 +21,15 @@ const getOpenSeats = () => new Promise((resolve) => {
 
 const getMaxSeats = () => new Promise(resolve => resolve({ rows: [{ seats: 75 }] }));
 
+const genReservationSlots = () => new Promise(resolve =>
+  resolve({
+    madeToday: 100,
+    reservations: [
+      { time: 17, remaining: 5 },
+      { time: 18, remaining: 10 },
+    ],
+  }));
 
 module.exports = {
-  addReservation, bookingsToday, getOpenSeats, getMaxSeats,
+  addReservation, bookingsToday, getOpenSeats, getMaxSeats, genReservationSlots,
 };

@@ -9,6 +9,8 @@ router.get('/:id/reservations/:date?', (req, res) => {
     ? req.params.date
     : (new Date()).toISOString().slice(0, 10);
 
+  // console.log(req.params.id, dateParam);
+
   db.genReservationSlots({ restaurantId: req.params.id, date: dateParam })
     .then((result) => {
       res.send(result);
