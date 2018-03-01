@@ -5,7 +5,6 @@ const { Client } = require('pg');
 // for connection information
 const client = new Client();
 
-
 client.connect();
 
 client.on('end', () => {
@@ -16,10 +15,12 @@ client.on('error', (error) => {
   console.error('pg client error', error);
 });
 
+
 const bookingsToday = restaurantId => client.query(
   'SELECT COUNT(id) FROM reservations WHERE restaurantid=$1 AND timestamp=$2',
   [restaurantId, (new Date()).toISOString().slice(0, 10)],
 );
+
 
 const getOpenSeats = ({
   restaurantId, date,
@@ -28,17 +29,66 @@ const getOpenSeats = ({
   [date, restaurantId],
 );
 
+
 const getMaxSeats = restaurantId => client.query(
   'SELECT seats FROM restaurants WHERE id=$1',
   [restaurantId],
 );
 
+
+const genReservationSlots = ({ restaurantId, date }) => Promise.all([
+  bookingsToday(restaurantId),
+  getOpenSeats({ restaurantId, date }),
+  getMaxSeats(restaurantId),
+])
+  .then((results) => {
+    // results[0] has the # bookings made info
+    // results[1] has the timeslot & remaining seats info
+    // results[2] has the max seats for the restaurant
+
+    // create default reservations array with default values
+    const returnedSlots = results[1].rows.map(row => ({
+      time: row.time,
+      remaining: Number(row.remaining),
+    }));
+
+    // if a reservation slot is not in the results, make a default one with
+    // max seating availability
+    const returnedTimes = results[1].rows.map(slot => slot.time);
+    for (let i = 17; i < 22; i += 1) {
+      if (!returnedTimes.includes(i)) {
+        returnedSlots.push({ time: i, remaining: results[2].rows[0].seats });
+      }
+    }
+
+    // sort returnedSlots
+    returnedSlots.sort((a, b) => (a.time - b.time));
+
+    const output = {
+      madeToday: Number(results[0].rows[0].count),
+      reservations: returnedSlots,
+    };
+    return output;
+  });
+
+
 const addReservation = ({
   restaurantId, date, time, name, party,
-}) => client.query(
-  'INSERT INTO reservations (restaurantid, date, time, name, party) VALUES ($1,$2,$3,$4,$5)',
-  [restaurantId, date, time, name, party],
-);
+}) => genReservationSlots({ restaurantId, date })
+  .then((slots) => {
+    const requestedSlot = slots.reservations.find(item => item.time === time);
+
+    // check max Seats
+    if (requestedSlot.remaining >= party) {
+      return client.query(
+        'INSERT INTO reservations (restaurantid, date, time, name, party) VALUES ($1,$2,$3,$4,$5)',
+        [restaurantId, date, time, name, party],
+      );
+    }
+    // console.log('genReservationSlots throws error');
+    throw new Error('Restaurant cannot take a party of that size!');
+  });
+
 
 const addRestaurantInfo = ({
   id, name, seats,
@@ -48,5 +98,11 @@ const addRestaurantInfo = ({
 );
 
 module.exports = {
-  client, bookingsToday, getOpenSeats, addReservation, addRestaurantInfo, getMaxSeats,
+  client,
+  bookingsToday,
+  getOpenSeats,
+  getMaxSeats,
+  genReservationSlots,
+  addReservation,
+  addRestaurantInfo,
 };
