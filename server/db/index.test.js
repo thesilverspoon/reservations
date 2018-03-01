@@ -42,6 +42,22 @@ describe('db/index.js', () => {
     });
   });
 
+  describe('getMaxSeats', () => {
+    test('should run select query from DB', () => {
+      const restaurantId = 305;
+      db.getMaxSeats(restaurantId)
+        .then((result) => {
+          expect(result.query).toBe('SELECT seats FROM restaurants WHERE id=$1');
+          expect(result.params).toHaveLength(1);
+          expect(result.params).toEqual(expect.arrayContaining([restaurantId]));
+        })
+        .catch((error) => {
+          expect(error).toBe(false);
+        });
+    });
+  });
+
+
   describe('addRestaurantInfo', () => {
     test('should run insert query of restaurant info into DB', () => {
       const testItem = { id: 5, name: 'Krusty Burger', seats: 100 };
@@ -62,7 +78,7 @@ describe('db/index.js', () => {
   describe('addReservation', () => {
     test('should run insert query of reservation into DB', () => {
       const testItem = {
-        restaurantId: 1,
+        restaurantId: 305,
         date: '2018-03-01',
         time: 17,
         name: 'Homer Simpson',

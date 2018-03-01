@@ -19,7 +19,9 @@ const getOpenSeats = () => new Promise((resolve) => {
   });
 });
 
+const getMaxSeats = () => new Promise(resolve => resolve({ rows: [{ seats: 75 }] }));
+
 
 module.exports = {
-  addReservation, bookingsToday, getOpenSeats,
+  addReservation, bookingsToday, getOpenSeats, getMaxSeats,
 };
