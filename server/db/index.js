@@ -28,6 +28,11 @@ const getOpenSeats = ({
   [date, restaurantId],
 );
 
+const getMaxSeats = restaurantId => client.query(
+  'SELECT seats FROM restaurants WHERE id=$1',
+  [restaurantId],
+);
+
 const addReservation = ({
   restaurantId, date, time, name, party,
 }) => client.query(
@@ -43,5 +48,5 @@ const addRestaurantInfo = ({
 );
 
 module.exports = {
-  client, bookingsToday, getOpenSeats, addReservation, addRestaurantInfo,
+  client, bookingsToday, getOpenSeats, addReservation, addRestaurantInfo, getMaxSeats,
 };
