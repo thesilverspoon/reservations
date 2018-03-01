@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 // import 'react-day-picker/lib/style.css';
 
+// import dayPickerStyles from '../styles/cssmodules.css';
+
+import styles from './styles/SearchParams.css';
 
 class SearchParams extends React.Component {
   constructor(props) {
@@ -42,9 +45,10 @@ class SearchParams extends React.Component {
     const timeArray = Array.from({ length: 5 }).map((val, i) => i + 17);
 
     return (
-      <div>
+      <div className={styles.container}>
         <div>
           <select
+            className={styles.input}
             name="partySize"
             value={partyVal}
             onChange={e => this.handlePartyChange(e.target.value)}
@@ -64,6 +68,7 @@ class SearchParams extends React.Component {
         </div>
         <div>
           <select
+            className={styles.input}
             name="time"
             value={timeVal}
             onChange={e => this.handleTimeChange(e.target.value)}
@@ -76,6 +81,7 @@ class SearchParams extends React.Component {
         </div>
         <div>
           <button
+            className={styles.button}
             onClick={() => this.props.clickHandler(dateVal, timeVal, partyVal)}
           >
             Find a Table

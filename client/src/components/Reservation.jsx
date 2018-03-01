@@ -5,6 +5,8 @@ import SetName from './SetName';
 import SearchParams from './SearchParams';
 import TimeSlotSelector from './TimeSlotSelector';
 
+import styles from './styles/Reservation.css';
+
 import helper from '../lib/helper';
 
 class Reservation extends React.Component {
@@ -84,7 +86,7 @@ class Reservation extends React.Component {
     } = this.state;
 
     return (
-      <div>
+      <div className={styles.container}>
         <SetName
           name={name}
           clickHandler={this.setName}
@@ -98,7 +100,7 @@ class Reservation extends React.Component {
           availabilityInfo={availabilityInfo}
           clickHandler={this.requestReservation}
         />
-        <div>
+        <div className={styles.message}>
           {message}
         </div>
       </div>
