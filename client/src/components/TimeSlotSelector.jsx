@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import TimeSlot from './TimeSlot';
 
+import styles from './styles/TimeSlotSelector.css';
+
 const TimeSlotSelector = (props) => {
   const timeSlots = props.availabilityInfo.reduce((acc, item) =>
     acc + (item.remaining >= props.party
@@ -19,15 +21,16 @@ const TimeSlotSelector = (props) => {
   }
 
   return (
-    <div>
-      <div>
-        <span role="img" aria-label="upward trend chart">📈</span>
-        { props.bookingsMadeToday } bookings made today!
+    <div className={styles.container}>
+      <div className={styles.bookingsToday}>
+        <span role="img" aria-label="upward trend chart">📈 </span>
+        Booked { props.bookingsMadeToday } times today!
       </div>
-      <div>
+      <div className={styles.availableSlots}>
+        <span role="img" aria-label="clock face seven o'clock">🕖 </span>
         { timeSlotMessage }
       </div>
-      <div>
+      <div className={styles.timeSlotBox}>
         { props.availabilityInfo.map(res => (<TimeSlot
           time={res.time}
           available={res.remaining >= props.party}

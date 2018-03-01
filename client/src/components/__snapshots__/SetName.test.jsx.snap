@@ -20,10 +20,36 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "Welcome, Marge Simpson",
+      "children": <div
+        className={undefined}
+      >
+        Welcome, 
+        Marge Simpson
+        !  Let’s make a reservation!
+      </div>,
+      "className": undefined,
     },
     "ref": null,
-    "rendered": "Welcome, Marge Simpson",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          "Welcome, ",
+          "Marge Simpson",
+          "!  Let’s make a reservation!",
+        ],
+        "className": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        "Welcome, ",
+        "Marge Simpson",
+        "!  Let’s make a reservation!",
+      ],
+      "type": "div",
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -32,10 +58,36 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "Welcome, Marge Simpson",
+        "children": <div
+          className={undefined}
+        >
+          Welcome, 
+          Marge Simpson
+          !  Let’s make a reservation!
+        </div>,
+        "className": undefined,
       },
       "ref": null,
-      "rendered": "Welcome, Marge Simpson",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Welcome, ",
+            "Marge Simpson",
+            "!  Let’s make a reservation!",
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          "Welcome, ",
+          "Marge Simpson",
+          "!  Let’s make a reservation!",
+        ],
+        "type": "div",
+      },
       "type": "div",
     },
   ],
@@ -71,20 +123,23 @@ ShallowWrapper {
     "props": Object {
       "children": <div>
         <input
+          className={undefined}
           id="nameInput"
           onChange={[Function]}
           onKeyPress={[Function]}
-          placeholder="Enter name"
+          placeholder="Enter Name"
           type="text"
           value=""
         />
         <button
+          className={undefined}
           id="nameButton"
           onClick={[Function]}
         >
-          Enter Name
+          Set Name
         </button>
       </div>,
+      "className": undefined,
     },
     "ref": null,
     "rendered": Object {
@@ -94,18 +149,20 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <input
+            className={undefined}
             id="nameInput"
             onChange={[Function]}
             onKeyPress={[Function]}
-            placeholder="Enter name"
+            placeholder="Enter Name"
             type="text"
             value=""
           />,
           <button
+            className={undefined}
             id="nameButton"
             onClick={[Function]}
           >
-            Enter Name
+            Set Name
           </button>,
         ],
       },
@@ -116,10 +173,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": undefined,
             "id": "nameInput",
             "onChange": [Function],
             "onKeyPress": [Function],
-            "placeholder": "Enter name",
+            "placeholder": "Enter Name",
             "type": "text",
             "value": "",
           },
@@ -132,12 +190,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Enter Name",
+            "children": "Set Name",
+            "className": undefined,
             "id": "nameButton",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Enter Name",
+          "rendered": "Set Name",
           "type": "button",
         },
       ],
@@ -153,20 +212,23 @@ ShallowWrapper {
       "props": Object {
         "children": <div>
           <input
+            className={undefined}
             id="nameInput"
             onChange={[Function]}
             onKeyPress={[Function]}
-            placeholder="Enter name"
+            placeholder="Enter Name"
             type="text"
             value=""
           />
           <button
+            className={undefined}
             id="nameButton"
             onClick={[Function]}
           >
-            Enter Name
+            Set Name
           </button>
         </div>,
+        "className": undefined,
       },
       "ref": null,
       "rendered": Object {
@@ -176,18 +238,20 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <input
+              className={undefined}
               id="nameInput"
               onChange={[Function]}
               onKeyPress={[Function]}
-              placeholder="Enter name"
+              placeholder="Enter Name"
               type="text"
               value=""
             />,
             <button
+              className={undefined}
               id="nameButton"
               onClick={[Function]}
             >
-              Enter Name
+              Set Name
             </button>,
           ],
         },
@@ -198,10 +262,11 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "className": undefined,
               "id": "nameInput",
               "onChange": [Function],
               "onKeyPress": [Function],
-              "placeholder": "Enter name",
+              "placeholder": "Enter Name",
               "type": "text",
               "value": "",
             },
@@ -214,12 +279,13 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Enter Name",
+              "children": "Set Name",
+              "className": undefined,
               "id": "nameButton",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Enter Name",
+            "rendered": "Set Name",
             "type": "button",
           },
         ],
