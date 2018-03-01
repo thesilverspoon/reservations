@@ -73,7 +73,7 @@ class Reservation extends React.Component {
           });
         } else {
           this.setState({
-            message: `Error making reservation: ${err}`,
+            message: 'Error making reservation',
           });
         }
       },
