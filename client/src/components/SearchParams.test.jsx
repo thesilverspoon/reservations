@@ -16,7 +16,10 @@ describe('SearchParams Component', () => {
   });
 
   test('should render correctly', () => {
-    expect(shallow(<SearchParams clickHandler={() => {}} />)).toMatchSnapshot();
+    expect(shallow(<SearchParams
+      clickHandler={() => {}}
+      changeParty={() => {}}
+    />)).toMatchSnapshot();
   });
 
   test('should set state on party size selection', () => {
