@@ -48,10 +48,20 @@ describe('Reservation Component', () => {
   });
 
   describe('requestReservation', () => {
+    test('should require a name to be set', () => {
+      // requesting restaurantId !== 305 will result in error
+      // in our mocked helper.getReservationInfo()
+      const component = shallow(<Reservation id={305} />);
+      component.instance().requestReservation(19);
+      const displayMessage = 'Enter your name before making a reservation!';
+      expect(component.state().message).toBe(displayMessage);
+    });
+
     test('should update state correctly', () => {
       // requesting restaurantId !== 305 will result in error
       // in our mocked helper.getReservationInfo()
       const component = shallow(<Reservation id={305} />);
+      component.instance().setName('test name');
       component.instance().requestReservation(19);
       const displayMessage = 'Your table has been saved!';
       expect(component.state().message).toBe(displayMessage);
@@ -61,6 +71,7 @@ describe('Reservation Component', () => {
       // requesting restaurantId !== 305 will result in error
       // in our mocked helper.getReservationInfo()
       const component = shallow(<Reservation id={100} />);
+      component.instance().setName('test name');
       component.instance().requestReservation(19);
       const errorMessage = 'Error making reservation';
       expect(component.state().message).toBe(errorMessage);

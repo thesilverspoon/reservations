@@ -31,6 +31,7 @@ class Reservation extends React.Component {
     };
 
     this.setName = this.setName.bind(this);
+    this.changeParty = this.changeParty.bind(this);
     this.requestReservation = this.requestReservation.bind(this);
     this.getAvailabilityInfo = this.getAvailabilityInfo.bind(this);
   }
@@ -46,9 +47,7 @@ class Reservation extends React.Component {
   getAvailabilityInfo(date, time, party) {
     helper.getReservationInfo(this.props.id, date, (err, data) => {
       if (!err) {
-        console.log('getAvailabilityInfo', data);
         this.setState({
-          message: '',
           availabilityInfo: data.reservations,
           bookingsMadeToday: data.madeToday,
           party,
@@ -63,22 +62,32 @@ class Reservation extends React.Component {
     });
   }
 
+  changeParty(party) {
+    this.setState({ party });
+  }
+
   requestReservation(time) {
-    helper.requestReservation(
-      this.props.id, this.state.date, time, this.state.name, this.state.party,
-      (err) => {
-        if (!err) {
-          console.log('requestReservation success');
-          this.setState({
-            message: 'Your table has been saved!',
-          });
-        } else {
-          this.setState({
-            message: 'Error making reservation',
-          });
-        }
-      },
-    );
+    if (this.state.name.length === 0) {
+      this.setState({
+        message: 'Enter your name before making a reservation!',
+      });
+    } else {
+      helper.requestReservation(
+        this.props.id, this.state.date, time, this.state.name, this.state.party,
+        (err) => {
+          if (!err) {
+            this.setState({
+              message: 'Your table has been saved!',
+            });
+            this.getAvailabilityInfo(this.state.date, this.state.time, this.state.party);
+          } else {
+            this.setState({
+              message: 'Error making reservation',
+            });
+          }
+        },
+      );
+    }
   }
 
   render() {
@@ -94,6 +103,7 @@ class Reservation extends React.Component {
         />
         <SearchParams
           clickHandler={this.getAvailabilityInfo}
+          changeParty={this.changeParty}
         />
         <TimeSlotSelector
           party={this.state.party}

@@ -22,12 +22,16 @@ class SearchParams extends React.Component {
   }
 
   handleDayChange(day) {
+    // const dayStr = day.toISOString().slice(0, 10);
+    const dayStr = moment(day).tz('America/Los_Angeles').format('YYYY-MM-DD');
+    this.props.clickHandler(dayStr, this.state.timeVal, this.state.partyVal);
     this.setState({
-      dateVal: moment(day).format('YYYY-MM-DD'),
+      dateVal: dayStr,
     });
   }
 
   handlePartyChange(party) {
+    this.props.changeParty(Number(party));
     this.setState({
       partyVal: Number(party),
     });
@@ -82,6 +86,7 @@ class SearchParams extends React.Component {
               </option>)) }
           </select>
         </div>
+        {/*
         <div>
           <button
             className={styles.button}
@@ -90,6 +95,7 @@ class SearchParams extends React.Component {
             Find a Table
           </button>
         </div>
+      */}
       </div>
     );
   }
@@ -97,6 +103,7 @@ class SearchParams extends React.Component {
 
 SearchParams.propTypes = {
   clickHandler: PropTypes.func.isRequired,
+  changeParty: PropTypes.func.isRequired,
 };
 
 export default SearchParams;
