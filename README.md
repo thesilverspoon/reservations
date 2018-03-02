@@ -4,26 +4,27 @@
 
 ## PostgreSQL Installation Instructions
 
-
+1.  Install PostgreSQL through `brew`:
 ```
 $ brew install postgresql
 ```
 
-
+1. Initialize the database
 ```
 $ initdb /usr/local/var/postgres
 ```
 
-
+1. In order to start the PostgreSQL server, run:
 ```
 $ pg_ctl -D /usr/local/var/postgres start
 ```
 
-
+Later, if you want to stop the PostgreSQL server, run:
 ```
 $ pg_ctl -D /usr/local/var/postgres stop
 ```
 
+1. Create a user:
 ```
 $ createuser mark_pg
 
@@ -32,28 +33,24 @@ Shall the new role be allowed to create databases? (y/n) n
 Shall the new role be allowed to create more new roles? (y/n) n
 ```
 
-
+1. Create a database named "silverspoon", owned by the new user
 ```
 $ createdb -Omark_pg -Eutf8 silverspoon
 ```
 
-
+1. Login to the `psql` administrative console:
 ```
 $ psql -U mark_pg silverspoon
 ```
 
-```
-$ psql -U mark_pg silverspoon < filename
-```
-
-
-psql prompt looks like this.
+1. The `psql` prompt looks like this.
 ```
 silverspoon->
 ```
 
-Other commands
+### List of some commands you can run in `psql`
 ```
+\?   // help
 \q   // quit
 \l   // list databases
 \dt  // show tables
@@ -61,4 +58,57 @@ Other commands
 \i <filename> // run filename with commands
 select * from restaurants;
 select * from reservations;
+```
+
+## Reservations Component Setup
+
+1. `git clone` the repository from Github.
+
+1. Download and install dependencies:
+```
+$ cd reservations-component
+$ npm install
+```
+
+1. Update the included `example.env` file with relevant settings & rename to `.env`
+
+
+1. Seed the database with data:
+```
+$ npm run seed
+
+> node ./server/db/seed.js
+
+migration complete, loading restaurant data
+restaurant data complete, loading reservations
+Generated 3866 reservations for 2018-03-02
+Generated 3840 reservations for 2018-03-03
+Generated 3763 reservations for 2018-03-04
+Generated 3794 reservations for 2018-03-05
+Generated 3749 reservations for 2018-03-06
+Generated 3778 reservations for 2018-03-07
+Generated 3836 reservations for 2018-03-08
+reservations complete
+closing connections
+pg client end
+```
+
+1. Run the development server:
+```
+$ npm run server-dev
+```
+
+1. The component should now be available from:
+```
+http://localhost:3001/
+```
+
+### Other `npm` commands:
+```
+npm test                  // run jest test suite
+npm run test:watch        // run jest in watch mode
+npm run test:coverage     // generate test coverage report
+npm run build             // run webpack build
+npm run build:watch       // run webpack in watch mode
+npm run lint              // run ESLint
 ```
