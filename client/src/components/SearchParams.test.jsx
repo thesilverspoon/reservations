@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import MockDate from 'mockdate';
+import moment from 'moment-timezone';
 
 import SearchParams from './SearchParams';
 
@@ -40,9 +41,12 @@ describe('SearchParams Component', () => {
     const component = shallow(<SearchParams clickHandler={() => {}} />);
     const dayPicker = component.find('DayPickerInput').first();
 
+    const newMoment = moment(new Date('2018-04-05')).tz('America/Los_Angeles');
+    const newMomentStr = newMoment.format('YYYY-MM-DD');
+
     expect(component.state().dateVal).toBe('2018-04-01');
-    dayPicker.simulate('dayChange', new Date('2018-04-05'));
-    expect(component.state().dateVal).toBe('2018-04-05');
+    dayPicker.simulate('dayChange', newMoment.toDate());
+    expect(component.state().dateVal).toBe(newMomentStr);
   });
 
   test('should call clickHandler with appropriate arguments', () => {
@@ -53,8 +57,11 @@ describe('SearchParams Component', () => {
     const dayPicker = component.find('DayPickerInput').first();
     const timeSelect = component.find('select').last();
 
+    const newMoment = moment(new Date('2018-04-05')).tz('America/Los_Angeles');
+    const newMomentStr = newMoment.format('YYYY-MM-DD');
+
     partySelect.simulate('change', { target: { value: '5' } });
-    dayPicker.simulate('dayChange', new Date('2018-04-05'));
+    dayPicker.simulate('dayChange', newMoment.toDate());
     timeSelect.simulate('change', { target: { value: '20' } });
 
     // .update() waits for state change to happen before clicking button
@@ -62,7 +69,7 @@ describe('SearchParams Component', () => {
     button.simulate('click');
 
     expect(mockFn.mock.calls.length).toBe(1);
-    expect(mockFn.mock.calls[0][0]).toBe('2018-04-05');
+    expect(mockFn.mock.calls[0][0]).toBe(newMomentStr);
     expect(mockFn.mock.calls[0][1]).toBe(20);
     expect(mockFn.mock.calls[0][2]).toBe(5);
   });
