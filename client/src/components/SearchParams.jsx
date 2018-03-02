@@ -22,10 +22,11 @@ class SearchParams extends React.Component {
   }
 
   handleDayChange(day) {
-    const dayStr = day.toISOString().slice(0, 10);
+    // const dayStr = day.toISOString().slice(0, 10);
+    const dayStr = moment(day).tz('America/Los_Angeles').format('YYYY-MM-DD');
     this.props.clickHandler(dayStr, this.state.timeVal, this.state.partyVal);
     this.setState({
-      dateVal: moment(day).format('YYYY-MM-DD'),
+      dateVal: dayStr,
     });
   }
 
