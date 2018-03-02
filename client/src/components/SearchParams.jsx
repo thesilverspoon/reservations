@@ -54,7 +54,7 @@ class SearchParams extends React.Component {
             onChange={e => this.handlePartyChange(e.target.value)}
           >
             { arrayTo10.map(val => (
-              <option value={val} >
+              <option value={val} key={val} >
                 {val} {val === 1 ? 'Person' : 'People'}
               </option>)) }
           </select>
@@ -76,7 +76,7 @@ class SearchParams extends React.Component {
             onChange={e => this.handleTimeChange(e.target.value)}
           >
             { timeArray.map(time => (
-              <option value={time} >
+              <option value={time} key={time} >
                 {time > 12 ? time - 12 : time}:00 {time > 12 ? 'PM' : 'AM'}
               </option>)) }
           </select>
