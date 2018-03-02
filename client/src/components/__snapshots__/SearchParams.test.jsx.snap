@@ -173,14 +173,6 @@ ShallowWrapper {
             </option>
           </select>
         </div>,
-        <div>
-          <button
-            className={undefined}
-            onClick={[Function]}
-          >
-            Find a Table
-          </button>
-        </div>,
       ],
       "className": undefined,
     },
@@ -831,34 +823,6 @@ ShallowWrapper {
         },
         "type": "div",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <button
-            className={undefined}
-            onClick={[Function]}
-          >
-            Find a Table
-          </button>,
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Find a Table",
-            "className": undefined,
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Find a Table",
-          "type": "button",
-        },
-        "type": "div",
-      },
     ],
     "type": "div",
   },
@@ -1021,14 +985,6 @@ ShallowWrapper {
                 PM
               </option>
             </select>
-          </div>,
-          <div>
-            <button
-              className={undefined}
-              onClick={[Function]}
-            >
-              Find a Table
-            </button>
           </div>,
         ],
         "className": undefined,
@@ -1677,34 +1633,6 @@ ShallowWrapper {
               },
             ],
             "type": "select",
-          },
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <button
-              className={undefined}
-              onClick={[Function]}
-            >
-              Find a Table
-            </button>,
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Find a Table",
-              "className": undefined,
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Find a Table",
-            "type": "button",
           },
           "type": "div",
         },

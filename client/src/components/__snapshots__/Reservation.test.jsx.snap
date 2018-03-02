@@ -25,6 +25,7 @@ ShallowWrapper {
           name=""
         />,
         <SearchParams
+          changeParty={[Function]}
           clickHandler={[Function]}
         />,
         <TimeSlotSelector
@@ -83,6 +84,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
+          "changeParty": [Function],
           "clickHandler": [Function],
         },
         "ref": null,
@@ -151,6 +153,7 @@ ShallowWrapper {
             name=""
           />,
           <SearchParams
+            changeParty={[Function]}
             clickHandler={[Function]}
           />,
           <TimeSlotSelector
@@ -209,6 +212,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "changeParty": [Function],
             "clickHandler": [Function],
           },
           "ref": null,

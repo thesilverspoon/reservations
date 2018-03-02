@@ -20,7 +20,7 @@ describe('SearchParams Component', () => {
   });
 
   test('should set state on party size selection', () => {
-    const component = shallow(<SearchParams clickHandler={() => {}} />);
+    const component = shallow(<SearchParams clickHandler={() => {}} changeParty={() => {}} />);
     const partySelect = component.find('select').first();
 
     expect(component.state().partyVal).toBe(2);
@@ -29,7 +29,7 @@ describe('SearchParams Component', () => {
   });
 
   test('should set state on time selection', () => {
-    const component = shallow(<SearchParams clickHandler={() => {}} />);
+    const component = shallow(<SearchParams clickHandler={() => {}} changeParty={() => {}} />);
     const timeSelect = component.find('select').last();
 
     expect(component.state().timeVal).toBe(19);
@@ -38,7 +38,7 @@ describe('SearchParams Component', () => {
   });
 
   test('should set state on date change', () => {
-    const component = shallow(<SearchParams clickHandler={() => {}} />);
+    const component = shallow(<SearchParams clickHandler={() => {}} changeParty={() => {}} />);
     const dayPicker = component.find('DayPickerInput').first();
 
     const newMoment = moment(new Date('2018-04-05')).tz('America/Los_Angeles');
@@ -51,22 +51,23 @@ describe('SearchParams Component', () => {
 
   test('should call clickHandler with appropriate arguments', () => {
     const mockFn = jest.fn();
-    const component = shallow(<SearchParams clickHandler={mockFn} />);
+    const component = shallow(<SearchParams clickHandler={mockFn} changeParty={() => {}} />);
 
     const partySelect = component.find('select').first();
-    const dayPicker = component.find('DayPickerInput').first();
     const timeSelect = component.find('select').last();
 
     const newMoment = moment(new Date('2018-04-05')).tz('America/Los_Angeles');
     const newMomentStr = newMoment.format('YYYY-MM-DD');
 
     partySelect.simulate('change', { target: { value: '5' } });
-    dayPicker.simulate('dayChange', newMoment.toDate());
     timeSelect.simulate('change', { target: { value: '20' } });
 
     // .update() waits for state change to happen before clicking button
-    const button = component.update().find('button').first();
-    button.simulate('click');
+    // const button = component.update().find('button').first();
+    // button.simulate('click');
+    const dayInputUpdated = component.update().find('DayPickerInput').first();
+    dayInputUpdated.simulate('dayChange', new Date('2018-04-05'));
+
 
     expect(mockFn.mock.calls.length).toBe(1);
     expect(mockFn.mock.calls[0][0]).toBe(newMomentStr);
