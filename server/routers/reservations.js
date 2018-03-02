@@ -8,13 +8,12 @@ const router = express.Router();
 router.use(bodyParser.json());
 
 router.post('/', (req, res) => {
-  console.log('POST recvd', req.body);
   db.addReservation(req.body)
     .then(() => {
       res.sendStatus(201);
     })
-    .catch((error) => {
-      res.status(500).send(error);
+    .catch(() => {
+      res.sendStatus(500);
     });
 });
 
