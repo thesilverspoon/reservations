@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-// import 'react-day-picker/lib/style.css';
 
-// import dayPickerStyles from '../styles/cssmodules.css';
-
+import dayPickerStyles from './styles/dayPicker.css';
 import styles from './styles/SearchParams.css';
+
+console.log('dayPickerStyles', dayPickerStyles);
 
 class SearchParams extends React.Component {
   constructor(props) {
@@ -61,7 +61,9 @@ class SearchParams extends React.Component {
         </div>
         <div>
           <DayPickerInput
-            dayPickerProps={{ disabledDays: { before: new Date() } }}
+            dayPickerProps={{
+              disabledDays: { before: new Date() },
+            }}
             onDayChange={this.handleDayChange}
             value={dateVal}
           />

@@ -17,8 +17,12 @@ module.exports = {
         }
       },
       {
+        test: /dayPicker\.css$/,
+        use: [ 'style-loader', 'css-loader' ],
+      },
+      {
         test: /\.css$/,
-        // use: [ 'style-loader', 'css-loader' ],
+        exclude: /dayPicker\.css$/,
         loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
       },
     ]
