@@ -20,6 +20,12 @@ describe('Reservation Component', () => {
     expect(component.state().name).toBe('Sideshow Bob');
   });
 
+  test('should changeParty correctly', () => {
+    const component = shallow(<Reservation id={305} />);
+    component.instance().changeParty(4);
+    expect(component.state().party).toBe(4);
+  });
+
   describe('getAvailaibilityInfo', () => {
     test('should update state correctly', () => {
       const component = shallow(<Reservation id={305} />);
