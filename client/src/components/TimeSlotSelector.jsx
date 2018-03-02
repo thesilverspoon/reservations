@@ -32,6 +32,7 @@ const TimeSlotSelector = (props) => {
       </div>
       <div className={styles.timeSlotBox}>
         { props.availabilityInfo.map(res => (<TimeSlot
+          key={res.time}
           time={res.time}
           available={res.remaining >= props.party}
           clickHandler={props.clickHandler}

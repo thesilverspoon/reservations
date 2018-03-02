@@ -1,3 +1,4 @@
+const moment = require('moment-timezone');
 const faker = require('faker');
 
 const sampleData = require('./sampleData');
@@ -11,9 +12,9 @@ const infoList = sampleData.map(rest => ({
 
 const generateReservations = (date) => {
   const reservationList = [];
-
-  const dateObj = date || new Date();
-  const dateStr = dateObj.toISOString().slice(0, 10);
+  const dateObj = date || moment(new Date()).tz('America/Los_Angeles');
+  // const dateStr = dateObj.toISOString().slice(0, 10);
+  const dateStr = dateObj.format('YYYY-MM-DD');
 
   sampleData.forEach((rest) => {
     const maxSeats = infoList.find(item => item.id === rest.id).seats;

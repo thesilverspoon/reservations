@@ -31,8 +31,7 @@
       "/server/db/migrations"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     }
   },
@@ -73,6 +72,8 @@
     "jquery": "^3.3.1",
     "knex": "^0.14.4",
     "mockdate": "^2.0.2",
+    "moment": "^2.20.1",
+    "moment-timezone": "^0.5.14",
     "morgan": "^1.9.0",
     "pg": "^7.4.1",
     "prop-types": "^15.6.0",

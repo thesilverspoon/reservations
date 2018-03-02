@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment-timezone';
 
 import SetName from './SetName';
 import SearchParams from './SearchParams';
@@ -22,7 +23,7 @@ class Reservation extends React.Component {
         { time: 20, remaining: 0 },
         { time: 21, remaining: 0 },
       ],
-      date: (new Date()).toISOString().slice(0, 10),
+      date: moment.tz('America/Los_Angeles').format('YYYY-MM-DD'),
       time: 19,
       name: '',
       party: 2,

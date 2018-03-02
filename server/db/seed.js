@@ -1,3 +1,5 @@
+const moment = require('moment-timezone');
+
 const config = require('./knexfile.js');
 const db = require('../db');
 const fakeData = require('../util/fakeData');
@@ -26,10 +28,10 @@ knex.migrate.rollback([config])
         const reservationInsert = [];
         // generate reservations for the next week
         for (let i = 0; i < 7; i += 1) {
-          const date = new Date();
-          date.setDate(date.getDate() + i);
+          const date = moment.tz('America/Los_Angeles').add(i, 'days');
+
           const fakeReservations = fakeData.generateReservations(date);
-          console.log(`Generated ${fakeReservations.length} reservations for ${date.toISOString().slice(0, 10)}`);
+          console.log(`Generated ${fakeReservations.length} reservations for ${date.format('YYYY-MM-DD')}`);
 
           fakeReservations.forEach((reservation) => {
             reservationInsert.push(db.addReservation(reservation));

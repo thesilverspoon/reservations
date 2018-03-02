@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
+import moment from 'moment-timezone';
 
 import dayPickerStyles from './styles/dayPicker.css';
 import styles from './styles/SearchParams.css';
@@ -13,7 +14,7 @@ class SearchParams extends React.Component {
 
     this.state = {
       partyVal: 2,
-      dateVal: (new Date()).toISOString().slice(0, 10),
+      dateVal: moment.tz('America/Los_Angeles').format('YYYY-MM-DD'),
       timeVal: 19,
     };
 
@@ -22,7 +23,7 @@ class SearchParams extends React.Component {
 
   handleDayChange(day) {
     this.setState({
-      dateVal: day.toISOString().slice(0, 10),
+      dateVal: moment(day).format('YYYY-MM-DD'),
     });
   }
 
@@ -54,7 +55,7 @@ class SearchParams extends React.Component {
             onChange={e => this.handlePartyChange(e.target.value)}
           >
             { arrayTo10.map(val => (
-              <option value={val} >
+              <option value={val} key={val} >
                 {val} {val === 1 ? 'Person' : 'People'}
               </option>)) }
           </select>
@@ -62,7 +63,7 @@ class SearchParams extends React.Component {
         <div>
           <DayPickerInput
             dayPickerProps={{
-              disabledDays: { before: new Date() },
+              disabledDays: { before: moment.tz('America/Los_Angeles').toDate() },
             }}
             onDayChange={this.handleDayChange}
             value={dateVal}
@@ -76,7 +77,7 @@ class SearchParams extends React.Component {
             onChange={e => this.handleTimeChange(e.target.value)}
           >
             { timeArray.map(time => (
-              <option value={time} >
+              <option value={time} key={time} >
                 {time > 12 ? time - 12 : time}:00 {time > 12 ? 'PM' : 'AM'}
               </option>)) }
           </select>
