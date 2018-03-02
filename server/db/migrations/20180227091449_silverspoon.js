@@ -2,8 +2,8 @@
 exports.up = (knex, Promise) => Promise.all([
   knex.schema.createTable('restaurants', (table) => {
     table.integer('id').primary();
-    table.string('name', 140);
-    table.integer('seats');
+    table.string('name', 140).notNullable();
+    table.integer('seats').notNullable();
   }),
 
   knex.schema.createTable('reservations', (table) => {
@@ -14,10 +14,10 @@ exports.up = (knex, Promise) => Promise.all([
       .inTable('restaurants')
       .onDelete('RESTRICT')
       .onUpdate('CASCADE');
-    table.date('date');
-    table.integer('time');
-    table.string('name', 140);
-    table.integer('party');
+    table.date('date').notNullable();
+    table.integer('time').notNullable();
+    table.string('name', 140).notNullable();
+    table.integer('party').notNullable();
     table.date('timestamp').defaultTo(knex.fn.now());
   }),
 ]);
