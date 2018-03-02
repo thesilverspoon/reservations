@@ -62,7 +62,7 @@ describe('Reservation Component', () => {
       // in our mocked helper.getReservationInfo()
       const component = shallow(<Reservation id={100} />);
       component.instance().requestReservation(19);
-      const errorMessage = 'Error making reservation: Error!';
+      const errorMessage = 'Error making reservation';
       expect(component.state().message).toBe(errorMessage);
     });
   });
