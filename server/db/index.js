@@ -1,3 +1,5 @@
+const moment = require('moment-timezone');
+
 require('dotenv').config();
 const { Client } = require('pg');
 
@@ -16,11 +18,14 @@ client.on('error', (error) => {
 });
 
 
-const bookingsToday = restaurantId => client.query(
-  'SELECT COUNT(id) FROM reservations WHERE restaurantid=$1 AND timestamp=$2',
-  [restaurantId, (new Date()).toISOString().slice(0, 10)],
-);
+const bookingsToday = (restaurantId) => {
+  const todayStr = moment(new Date()).tz('America/Los_Angeles').format('YYYY-MM-DD');
 
+  return client.query(
+    'SELECT COUNT(id) FROM reservations WHERE restaurantid=$1 AND timestamp=$2',
+    [restaurantId, todayStr],
+  );
+};
 
 const getOpenSeats = ({
   restaurantId, date,

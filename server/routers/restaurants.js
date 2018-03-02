@@ -1,4 +1,5 @@
 const express = require('express');
+const moment = require('moment-timezone');
 
 const db = require('../db');
 
@@ -7,7 +8,7 @@ const router = express.Router();
 router.get('/:id/reservations/:date?', (req, res) => {
   const dateParam = req.params.date
     ? req.params.date
-    : (new Date()).toISOString().slice(0, 10);
+    : moment(new Date()).tz('America/Los_Angeles').format('YYYY-MM-DD');
 
   // console.log(req.params.id, dateParam);
 
