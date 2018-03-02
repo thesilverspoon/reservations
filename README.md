@@ -9,12 +9,12 @@
 $ brew install postgresql
 ```
 
-1. Initialize the database
+2.  Initialize the database
 ```
 $ initdb /usr/local/var/postgres
 ```
 
-1. In order to start the PostgreSQL server, run:
+3. In order to start the PostgreSQL server, run:
 ```
 $ pg_ctl -D /usr/local/var/postgres start
 ```
@@ -24,7 +24,7 @@ Later, if you want to stop the PostgreSQL server, run:
 $ pg_ctl -D /usr/local/var/postgres stop
 ```
 
-1. Create a user:
+4. Create a user:
 ```
 $ createuser mark_pg
 
@@ -33,22 +33,23 @@ Shall the new role be allowed to create databases? (y/n) n
 Shall the new role be allowed to create more new roles? (y/n) n
 ```
 
-1. Create a database named "silverspoon", owned by the new user
+5. Create a database named "silverspoon", owned by the new user
 ```
 $ createdb -Omark_pg -Eutf8 silverspoon
 ```
 
-1. Login to the `psql` administrative console:
+### `psql` console
+Login to the `psql` administrative console:
 ```
 $ psql -U mark_pg silverspoon
 ```
 
-1. The `psql` prompt looks like this.
+The `psql` prompt looks like this.
 ```
 silverspoon->
 ```
 
-### List of some commands you can run in `psql`
+List of useful `psql` commands
 ```
 \?   // help
 \q   // quit
@@ -62,18 +63,18 @@ select * from reservations;
 
 ## Reservations Component Setup
 
-1. `git clone` the repository from Github.
+6. `git clone` the repository from Github.
 
-1. Download and install dependencies:
+7. Download and install dependencies:
 ```
 $ cd reservations-component
 $ npm install
 ```
 
-1. Update the included `example.env` file with relevant settings & rename to `.env`
+8. Update the included `example.env` file with relevant settings & rename to `.env`
 
 
-1. Seed the database with data:
+9. Seed the database with data:
 ```
 $ npm run seed
 
@@ -93,12 +94,12 @@ closing connections
 pg client end
 ```
 
-1. Run the development server:
+10. Run the development server:
 ```
 $ npm run server-dev
 ```
 
-1. The component should now be available from:
+11. The component should now be available from:
 ```
 http://localhost:3001/
 ```
