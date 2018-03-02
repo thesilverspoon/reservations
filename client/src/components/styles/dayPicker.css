@@ -172,18 +172,19 @@
 
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
   position: relative;
-  color: #f0f8ff;
-  background-color: #4a90e2;
+  color: #fff0f0;
+  background-color: #da3743;
   border-radius: 100%;
 }
 
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
-  background-color: #51a0fa;
+  /*background-color: #51a0fa;*/
+  background-color: #da3743;
 }
 
 .DayPicker:not(.DayPicker--interactionDisabled)
   .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
-  background-color: #f0f8ff;
+  background-color: #fff0f0;
   border-radius: 50%;
 }
 
@@ -191,6 +192,17 @@
 
 .DayPickerInput {
   display: inline-block;
+}
+
+.DayPickerInput input {
+  width: 165px;
+  height: 35px;
+  margin: 5px;
+  font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 15px;
+  text-align: center;
+  color: #444;
+  border: 1px solid #CCC;
 }
 
 .DayPickerInput-OverlayWrapper {
