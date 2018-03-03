@@ -68,5 +68,8 @@ describe('restaurants router', () => {
 
         return expect(response.body.reservations[0]).toMatchObject(expectedReservation);
       }));
+
+    test('should send 500 back on errors', () => request(app).get(`/restaurants/${restaurantId}/reservations/2018-02-31`)
+      .then(response => expect(response.statusCode).toBe(500)));
   });
 });
