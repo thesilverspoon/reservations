@@ -11,6 +11,14 @@ describe('getReservationInfo', () => {
       expect(data.inputOptions.url).toBe('/restaurants/200/reservations/2018-04-01');
     });
   });
+
+  test('should handle errors correctly', () => {
+    const id = 200;
+    const date = '2018-02-31';
+    helper.getReservationInfo(id, date, (err) => {
+      expect(err).toBe('error');
+    });
+  });
 });
 
 describe('requestReservation', () => {
@@ -35,6 +43,17 @@ describe('requestReservation', () => {
 
       const inputJSON = JSON.parse(data.inputOptions.data);
       expect(inputJSON).toMatchObject(expectedInput);
+    });
+  });
+
+  test('should handle errors correctly', () => {
+    const restaurantId = 305;
+    const date = '2018-02-31';
+    const time = 20;
+    const name = 'Lenny Carl';
+    const party = 8;
+    helper.requestReservation(restaurantId, date, time, name, party, (err) => {
+      expect(err).toBe('error');
     });
   });
 });

@@ -16,8 +16,8 @@ router.get('/:id/reservations/:date?', (req, res) => {
     .then((result) => {
       res.send(result);
     })
-    .catch((error) => {
-      console.log('genReservationSlots error', error);
+    .catch(() => {
+      // console.log('genReservationSlots error', error);
       res.sendStatus(500);
     });
 });

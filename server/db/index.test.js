@@ -1,4 +1,5 @@
 require('dotenv').config();
+const moment = require('moment-timezone');
 
 jest.mock('pg');
 
@@ -12,7 +13,7 @@ describe('db/index.js', () => {
   describe('bookingsToday', () => {
     test('should run count reservations made today for a restaurant', () => {
       const restaurantId = 305;
-      const today = (new Date()).toISOString().slice(0, 10);
+      const today = moment.tz('America/Los_Angeles').format('YYYY-MM-DD');
       db.bookingsToday(restaurantId)
         .then((result) => {
           expect(result.query).toBe('SELECT COUNT(id) FROM reservations WHERE restaurantid=$1 AND timestamp=$2');
@@ -95,6 +96,12 @@ describe('db/index.js', () => {
         .catch((error) => {
           expect(error).toBe(false);
         });
+    });
+  });
+
+  describe('genReservationSlots', () => {
+    test('should', () => {
+      expect(true).toBe(true);
     });
   });
 });

@@ -5,12 +5,12 @@ const getReservationInfo = (id, date, callback) => {
     url: `/restaurants/${id}/reservations/${date}`,
     method: 'GET',
     success: (data) => {
-      console.log('ajax GET success', data);
+      // console.log('ajax GET success', data);
       callback(null, data);
     },
-    error: (jqxhr, errString, errThrown) => {
-      console.log('ajax GET error', jqxhr, errString, errThrown);
-      callback(errString, null);
+    error: (jqxhr, status, error) => {
+      // console.log('ajax GET error', jqxhr, status, error);
+      callback(error, null);
     },
   });
 };
@@ -28,11 +28,11 @@ const requestReservation = (id, date, time, name, party, callback) => {
       party,
     }),
     success: (result) => {
-      console.log('ajax POST success', result);
+      // console.log('ajax POST success', result);
       callback(null, result);
     },
-    error: (error) => {
-      console.log('ajax POST error', error);
+    error: (jqxhr, status, error) => {
+      // console.log('ajax POST error', jqxhr, status, error);
       callback(error, null);
     },
   });
