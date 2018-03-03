@@ -97,4 +97,10 @@ describe('db/index.js', () => {
         });
     });
   });
+
+  describe('genReservationSlots', () => {
+    test('should', () => {
+      expect(true).toBe(true);
+    });
+  });
 });
