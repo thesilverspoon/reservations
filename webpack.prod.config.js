@@ -1,8 +1,8 @@
 const path = require('path');
 
 module.exports = {
-  entry: './client/src/components/Reservation.jsx',
-
+  // entry: './client/src/components/Reservation.jsx',
+  entry: './client/src/production.js',
 
   module: {
     rules: [
