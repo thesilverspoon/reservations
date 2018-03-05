@@ -1,9 +1,12 @@
 import $ from 'jquery';
 
+import BASE_URL from './url';
+
 const getReservationInfo = (id, date, callback) => {
   $.ajax({
-    url: `/restaurants/${id}/reservations/${date}`,
+    url: `${BASE_URL}/restaurants/${id}/reservations/${date}`,
     method: 'GET',
+    crossDomain: true,
     success: (data) => {
       // console.log('ajax GET success', data);
       callback(null, data);
@@ -17,8 +20,9 @@ const getReservationInfo = (id, date, callback) => {
 
 const requestReservation = (id, date, time, name, party, callback) => {
   $.ajax({
-    url: '/reservations',
+    url: `${BASE_URL}/reservations`,
     method: 'POST',
+    crossDomain: true,
     contentType: 'application/json',
     data: JSON.stringify({
       restaurantId: id,
