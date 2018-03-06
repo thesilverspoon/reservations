@@ -110,6 +110,7 @@ npm test                  // run jest test suite
 npm run test:watch        // run jest in watch mode
 npm run test:coverage     // generate test coverage report
 npm run build             // run webpack build
+npm run build:prod        // create a production bundle.js
 npm run build:watch       // run webpack in watch mode
 npm run lint              // run ESLint
 ```
