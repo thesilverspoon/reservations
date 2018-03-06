@@ -8,6 +8,7 @@ const router = express.Router();
 router.use(bodyParser.json());
 
 router.post('/', (req, res) => {
+  res.set({ 'Access-Control-Allow-Origin': '*' });
   db.addReservation(req.body)
     .then(() => {
       res.sendStatus(201);
