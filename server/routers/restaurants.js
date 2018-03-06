@@ -11,7 +11,7 @@ router.get('/:id/reservations/:date?', (req, res) => {
     : moment(new Date()).tz('America/Los_Angeles').format('YYYY-MM-DD');
 
   // console.log(req.params.id, dateParam);
-  res.set({ 'Access-Control-Allow-Origin': '*' });
+  // res.set({ 'Access-Control-Allow-Origin': '*' });
 
   db.genReservationSlots({ restaurantId: req.params.id, date: dateParam })
     .then((result) => {
