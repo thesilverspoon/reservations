@@ -1,7 +1,7 @@
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  // entry: './client/src/components/Reservation.jsx',
   entry: './client/src/production.js',
 
   module: {
@@ -31,6 +31,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']
   },
+
+  plugins: [
+    new Dotenv()
+  ],
 
   output: {
     filename: 'bundle-prod.js',

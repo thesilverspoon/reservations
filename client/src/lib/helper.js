@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import BASE_URL from './url';
+const BASE_URL = process.env.BASE_URL ? process.env.BASE_URL : '';
 
 const getReservationInfo = (id, date, callback) => {
   $.ajax({
