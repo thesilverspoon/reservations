@@ -1,6 +1,7 @@
 :local(.container) {
   /*border: 1px solid green;*/
   padding: 8px;
+  padding-top: 15px;
 }
 
 :local(.input) {

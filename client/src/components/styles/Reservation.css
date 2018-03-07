@@ -2,6 +2,8 @@
   margin-left: auto;
   margin-right: auto;
   width: 675px;
+  border-radius: 10px;
+  background: #fff;
 }
 
 :local(.message) {
@@ -10,4 +12,5 @@
   margin: 5px;
   padding-left: 15px;
   color: #333;
+  padding-bottom:15px;
 }
