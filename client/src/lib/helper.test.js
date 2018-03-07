@@ -8,7 +8,7 @@ describe('getReservationInfo', () => {
     const date = '2018-04-01';
     helper.getReservationInfo(id, date, (err, data) => {
       // console.log(data);
-      expect(data.inputOptions.url).toBe('http://localhost:3001/restaurants/200/reservations/2018-04-01');
+      expect(data.inputOptions.url).toBe('/restaurants/200/reservations/2018-04-01');
     });
   });
 
@@ -29,7 +29,7 @@ describe('requestReservation', () => {
     const name = 'Lenny Carl';
     const party = 8;
     helper.requestReservation(restaurantId, date, time, name, party, (err, data) => {
-      expect(data.inputOptions.url).toBe('http://localhost:3001/reservations');
+      expect(data.inputOptions.url).toBe('/reservations');
       expect(data.inputOptions.method).toBe('POST');
       expect(data.inputOptions.contentType).toBe('application/json');
 
