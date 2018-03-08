@@ -4,6 +4,7 @@
   "description": "SilverSpoon reservations component",
   "main": "./server/server.js",
   "scripts": {
+    "start": "node ./server/server.js",
     "test": "./node_modules/.bin/jest",
     "test:watch": "./node_modules/.bin/jest --watch",
     "test:coverage": "./node_modules/.bin/jest --coverage",
@@ -67,6 +68,7 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "dotenv": "^5.0.0",
+    "dotenv-webpack": "^1.5.5",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.2",
